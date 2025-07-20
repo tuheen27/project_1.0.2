@@ -3,266 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model.js App</title>
+    <title>Beautiful Aurora - Nature's Gallery</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333;">
-    <!-- Header -->
-    <header style="background-color: #2c3e50; color: white; padding: 1rem; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-        <h1 style="margin: 0;">Task Manager</h1>
-        <p style="margin: 0.5rem 0 0;">Organize your work efficiently</p>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #111, #050520); color: #fff; min-height: 100vh; overflow-x: hidden;">
+    <!-- Animation Background Layer -->
+    <div id="auroraBackground" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; opacity: 0.7;"></div>
+
+    <!-- Header with Animated Title -->
+    <header style="padding: 2rem 1rem; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: relative; z-index: 2;">
+            <h1 id="mainTitle" style="font-size: 3rem; margin: 0; text-shadow: 0 0 10px rgba(120, 220, 255, 0.8); opacity: 0; transform: translateY(-20px); transition: all 1.5s ease-out;">
+                Northern Lights
+            </h1>
+            <p id="tagline" style="font-size: 1.2rem; margin: 1rem 0 0; color: #b8e8ff; text-shadow: 0 0 5px rgba(120, 220, 255, 0.5); opacity: 0; transform: translateY(20px); transition: all 1.5s ease-out 0.5s;">
+                Nature's most mesmerizing light show
+            </p>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main style="max-width: 800px; margin: 2rem auto; padding: 1rem; background-color: white; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-        <!-- Task Input Form -->
-        <div style="margin-bottom: 2rem; padding: 1rem; background-color: #f9f9f9; border-radius: 5px;">
-            <h2 style="margin-top: 0; color: #2c3e50; font-size: 1.2rem;">Add New Task</h2>
-            <div style="display: flex; gap: 10px;">
-                <input id="taskInput" type="text" placeholder="Enter task description" 
-                    style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;">
-                <select id="prioritySelect" 
-                    style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;">
-                    <option value="low">Low</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="high">High</option>
-                </select>
-                <button onclick="taskModel.addTask()" 
-                    style="background-color: #3498db; color: white; border: none; padding: 0.5rem 1rem; border-radius: 3px; cursor: pointer; font-size: 1rem;">Add</button>
-            </div>
-        </div>
-
-        <!-- Task Display Area -->
-        <div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">
-                <h2 style="margin: 0; color: #2c3e50; font-size: 1.2rem;">Your Tasks</h2>
-                <div>
-                    <button onclick="taskModel.filterTasks('all')" 
-                        style="background-color: #7f8c8d; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 3px; cursor: pointer; margin-left: 5px; font-size: 0.9rem;">All</button>
-                    <button onclick="taskModel.filterTasks('active')" 
-                        style="background-color: #2ecc71; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 3px; cursor: pointer; margin-left: 5px; font-size: 0.9rem;">Active</button>
-                    <button onclick="taskModel.filterTasks('completed')" 
-                        style="background-color: #9b59b6; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 3px; cursor: pointer; margin-left: 5px; font-size: 0.9rem;">Completed</button>
+    <main style="max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem;">
+        <!-- Feature Sections -->
+        <section class="fade-in-section" style="margin-bottom: 3rem; background: rgba(15, 25, 50, 0.6); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out;">
+            <h2 style="color: #7fdbff; margin-top: 0; font-size: 1.8rem;">The Science of Aurora</h2>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <p style="line-height: 1.7; margin: 0;">
+                    The aurora borealis, or northern lights, occurs when charged particles from the sun collide with gases in Earth's atmosphere. These particles are directed toward the poles by Earth's magnetic field, creating the dancing lights we observe.
+                </p>
+                <div id="infoCard" style="background: rgba(10, 20, 40, 0.6); border-left: 4px solid #00b3ff; padding: 1.5rem; border-radius: 6px; margin-top: 1rem; transform-origin: left center; transition: all 0.3s ease;">
+                    <h3 style="margin-top: 0; color: #7fdbff; font-size: 1.3rem;">Did you know?</h3>
+                    <p style="margin-bottom: 0;">
+                        The different colors of the aurora are caused by different gases. Oxygen produces green and red light, while nitrogen creates blue and purple hues.
+                    </p>
                 </div>
             </div>
-            
-            <!-- Task List Container -->
-            <div id="taskList" style="margin-top: 1rem;">
-                <!-- Tasks will be inserted here dynamically -->
-                <div style="text-align: center; color: #7f8c8d; padding: 2rem 0;">Loading tasks...</div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="fade-in-section" style="margin-bottom: 3rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out 0.2s;">
+            <h2 style="color: #7fdbff; margin-bottom: 1.5rem; font-size: 1.8rem;">Stunning Locations</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="location-card" style="background: rgba(15, 25, 50, 0.6); border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="height: 180px; background-color: #1a3b5c; display: flex; align-items: center; justify-content: center; color: #7fdbff; font-size: 1.5rem;">Iceland</div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-top: 0; color: #7fdbff;">Iceland</h3>
+                        <p style="margin-bottom: 0; line-height: 1.6;">
+                            One of the best places to witness the northern lights, especially between September and April.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="location-card" style="background: rgba(15, 25, 50, 0.6); border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="height: 180px; background-color: #1a3b5c; display: flex; align-items: center; justify-content: center; color: #7fdbff; font-size: 1.5rem;">Norway</div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-top: 0; color: #7fdbff;">Norway</h3>
+                        <p style="margin-bottom: 0; line-height: 1.6;">
+                            Tromsø in northern Norway is located in the aurora belt, making it ideal for viewing.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="location-card" style="background: rgba(15, 25, 50, 0.6); border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="height: 180px; background-color: #1a3b5c; display: flex; align-items: center; justify-content: center; color: #7fdbff; font-size: 1.5rem;">Finland</div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-top: 0; color: #7fdbff;">Finland</h3>
+                        <p style="margin-bottom: 0; line-height: 1.6;">
+                            Finnish Lapland offers more than 200 nights per year when the aurora might be visible.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="fade-in-section" style="margin-bottom: 3rem; background: rgba(15, 25, 50, 0.6); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out 0.4s;">
+            <h2 style="color: #7fdbff; margin-top: 0; font-size: 1.8rem;">Stay Updated</h2>
+            <p style="margin-bottom: 1.5rem;">Join our newsletter to receive aurora forecasts and photography tips.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <input type="email" placeholder="Your email address" 
+                    style="flex: 1; min-width: 200px; padding: 0.8rem; border: none; border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1rem; outline: none;">
+                <button id="subscribeBtn" style="padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #00b3ff, #007bff); border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                    Subscribe
+                </button>
+            </div>
+        </section>
     </main>
 
-    <!-- Stats Footer -->
-    <footer style="background-color: #ecf0f1; padding: 1rem; text-align: center; font-size: 0.9rem; color: #7f8c8d; border-top: 1px solid #ddd;">
-        <div id="taskStats">
-            Total: <span id="totalTasks">0</span> | 
-            Active: <span id="activeTasks">0</span> | 
-            Completed: <span id="completedTasks">0</span>
-        </div>
-        <div style="margin-top: 0.5rem;">
-            Last updated: <span id="lastUpdated">Never</span>
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem 1rem; color: #7fdbff; background: rgba(10, 15, 30, 0.8);">
+        <p>© 2025 Northern Lights Explorer | Created with ♥ for nature's wonders</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+            <a href="#" class="social-link" style="color: #7fdbff; text-decoration: none; transition: all 0.3s ease;"
+               onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'; this.style.textShadow='0 0 10px rgba(127, 219, 255, 0.8)';" 
+               onmouseout="this.style.color='#7fdbff'; this.style.transform='translateY(0)'; this.style.textShadow='none';">
+                Instagram
+            </a>
+            <a href="#" class="social-link" style="color: #7fdbff; text-decoration: none; transition: all 0.3s ease;"
+               onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'; this.style.textShadow='0 0 10px rgba(127, 219, 255, 0.8)';" 
+               onmouseout="this.style.color='#7fdbff'; this.style.transform='translateY(0)'; this.style.textShadow='none';">
+                Twitter
+            </a>
+            <a href="#" class="social-link" style="color: #7fdbff; text-decoration: none; transition: all 0.3s ease;"
+               onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'; this.style.textShadow='0 0 10px rgba(127, 219, 255, 0.8)';" 
+               onmouseout="this.style.color='#7fdbff'; this.style.transform='translateY(0)'; this.style.textShadow='none';">
+                Facebook
+            </a>
         </div>
     </footer>
 
-    <!-- Inline JavaScript for Model Implementation -->
+    <!-- Inline JavaScript for Animations and Effects -->
     <script>
-        // Simple Model.js implementation
-        const taskModel = {
-            // State
-            tasks: [],
-            filter: 'all',
+        // Aurora Background Animation
+        function createAuroraBackground() {
+            const container = document.getElementById('auroraBackground');
+            const canvasCount = 5;
             
-            // Initialize the app
-            init: function() {
-                // Load tasks from localStorage if available
-                const savedTasks = localStorage.getItem('tasks');
-                if (savedTasks) {
-                    this.tasks = JSON.parse(savedTasks);
-                } else {
-                    // Sample tasks for demonstration
-                    this.tasks = [
-                        { id: 1, text: 'Learn Model.js pattern', completed: false, priority: 'high' },
-                        { id: 2, text: 'Build a task manager app', completed: true, priority: 'medium' },
-                        { id: 3, text: 'Deploy application', completed: false, priority: 'low' }
-                    ];
+            for (let i = 0; i < canvasCount; i++) {
+                const canvas = document.createElement('canvas');
+                canvas.style.position = 'absolute';
+                canvas.style.top = '0';
+                canvas.style.left = '0';
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                canvas.style.opacity = (0.3 / canvasCount) * (i + 1);
+                canvas.style.zIndex = i;
+                container.appendChild(canvas);
+                
+                const ctx = canvas.getContext('2d');
+                const colorMultiplier = i / canvasCount;
+                
+                function resize() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
                 }
                 
-                // Render initial state
-                this.render();
-                this.updateStats();
-            },
-            
-            // Generate unique ID for tasks
-            generateId: function() {
-                return Date.now();
-            },
-            
-            // Add a new task
-            addTask: function() {
-                const input = document.getElementById('taskInput');
-                const priority = document.getElementById('prioritySelect');
-                
-                if (input.value.trim() === '') {
-                    alert('Please enter a task description');
-                    return;
-                }
-                
-                const newTask = {
-                    id: this.generateId(),
-                    text: input.value.trim(),
-                    completed: false,
-                    priority: priority.value
-                };
-                
-                this.tasks.push(newTask);
-                this.saveToLocalStorage();
-                
-                // Clear input field
-                input.value = '';
-                
-                // Update UI
-                this.render();
-                this.updateStats();
-            },
-            
-            // Toggle task completion status
-            toggleTask: function(id) {
-                const task = this.tasks.find(task => task.id === id);
-                if (task) {
-                    task.completed = !task.completed;
-                    this.saveToLocalStorage();
-                    this.render();
-                    this.updateStats();
-                }
-            },
-            
-            // Delete a task
-            deleteTask: function(id) {
-                this.tasks = this.tasks.filter(task => task.id !== id);
-                this.saveToLocalStorage();
-                this.render();
-                this.updateStats();
-            },
-            
-            // Filter tasks by status
-            filterTasks: function(filterType) {
-                this.filter = filterType;
-                this.render();
-            },
-            
-            // Save tasks to localStorage
-            saveToLocalStorage: function() {
-                localStorage.setItem('tasks', JSON.stringify(this.tasks));
-                document.getElementById('lastUpdated').textContent = new Date().toLocaleTimeString();
-            },
-            
-            // Update task statistics
-            updateStats: function() {
-                document.getElementById('totalTasks').textContent = this.tasks.length;
-                document.getElementById('activeTasks').textContent = this.tasks.filter(t => !t.completed).length;
-                document.getElementById('completedTasks').textContent = this.tasks.filter(t => t.completed).length;
-            },
-            
-            // Render the task list
-            render: function() {
-                const taskList = document.getElementById('taskList');
-                
-                // Filter tasks according to current filter
-                let filteredTasks = this.tasks;
-                if (this.filter === 'active') {
-                    filteredTasks = this.tasks.filter(t => !t.completed);
-                } else if (this.filter === 'completed') {
-                    filteredTasks = this.tasks.filter(t => t.completed);
-                }
-                
-                // Clear current list
-                taskList.innerHTML = '';
-                
-                // If no tasks match filter
-                if (filteredTasks.length === 0) {
-                    taskList.innerHTML = `<div style="text-align: center; color: #7f8c8d; padding: 2rem 0;">No ${this.filter} tasks found</div>`;
-                    return;
-                }
-                
-                // Create task elements
-                filteredTasks.forEach(task => {
-                    // Set priority colors
-                    let priorityColor = '#3498db'; // Default medium blue
-                    if (task.priority === 'high') {
-                        priorityColor = '#e74c3c'; // Red
-                    } else if (task.priority === 'low') {
-                        priorityColor = '#2ecc71'; // Green
+                function animate() {
+                    // Clear canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Generate aurora wave
+                    const time = Date.now() * 0.001;
+                    const speed = 0.2 + i * 0.05;
+                    const amplitude = 50 + i * 10;
+                    const wavelength = 0.01 - i * 0.001;
+                    
+                    const r = 20 + (100 * colorMultiplier);
+                    const g = 120 + (80 * (1 - colorMultiplier));
+                    const b = 200 - (50 * colorMultiplier);
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(0, canvas.height);
+                    
+                    for (let x = 0; x < canvas.width; x += 5) {
+                        const y = Math.sin((x * wavelength) + (time * speed)) * amplitude + 
+                                canvas.height * (0.4 + (0.1 * i)) + 
+                                Math.sin((x * 0.003) + (time * 0.2)) * (20 + i * 5);
+                        ctx.lineTo(x, y);
                     }
                     
-                    // Create task item HTML
-                    const taskItem = document.createElement('div');
-                    taskItem.style = `
-                        display: flex;
-                        align-items: center;
-                        padding: 0.8rem;
-                        border-left: 4px solid ${priorityColor};
-                        background-color: white;
-                        margin-bottom: 0.5rem;
-                        border-radius: 3px;
-                        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-                    `;
+                    ctx.lineTo(canvas.width, canvas.height);
+                    ctx.closePath();
                     
-                    // Task status checkbox
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.checked = task.completed;
-                    checkbox.style = 'margin-right: 10px; cursor: pointer;';
-                    checkbox.onclick = () => this.toggleTask(task.id);
+                    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0)`);
+                    gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, 0.3)`);
+                    gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
                     
-                    // Task text content
-                    const textSpan = document.createElement('span');
-                    textSpan.textContent = task.text;
-                    textSpan.style = `
-                        flex: 1;
-                        ${task.completed ? 'text-decoration: line-through; color: #7f8c8d;' : ''}
-                    `;
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
                     
-                    // Priority badge
-                    const priorityBadge = document.createElement('span');
-                    priorityBadge.textContent = task.priority;
-                    priorityBadge.style = `
-                        background-color: ${priorityColor};
-                        color: white;
-                        padding: 0.2rem 0.5rem;
-                        border-radius: 3px;
-                        font-size: 0.8rem;
-                        margin-right: 10px;
-                    `;
-                    
-                    // Delete button
-                    const deleteBtn = document.createElement('button');
-                    deleteBtn.innerHTML = '&times;'; // × symbol
-                    deleteBtn.style = `
-                        background: none;
-                        border: none;
-                        color: #e74c3c;
-                        font-size: 1.2rem;
-                        cursor: pointer;
-                        padding: 0 5px;
-                    `;
-                    deleteBtn.onclick = () => this.deleteTask(task.id);
-                    
-                    // Assemble task item
-                    taskItem.appendChild(checkbox);
-                    taskItem.appendChild(textSpan);
-                    taskItem.appendChild(priorityBadge);
-                    taskItem.appendChild(deleteBtn);
-                    
-                    // Add to task list
-                    taskList.appendChild(taskItem);
-                });
+                    requestAnimationFrame(animate);
+                }
+                
+                resize();
+                animate();
+                
+                window.addEventListener('resize', resize);
             }
-        };
+        }
         
-        // Initialize the app when DOM is loaded
+        // Observe elements and animate them when they enter viewport
+        function setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Hover effects for cards
+        function setupCardHoverEffects() {
+            document.querySelectorAll('.location-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.boxShadow = '0 15px 30px rgba(0, 179, 255, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = 'none';
+                });
+            });
+            
+            const infoCard = document.getElementById('infoCard');
+            infoCard.addEventListener('mouseenter', () => {
+                infoCard.style.transform = 'scale(1.03)';
+                infoCard.style.borderLeftWidth = '8px';
+            });
+            
+            infoCard.addEventListener('mouseleave', () => {
+                infoCard.style.transform = 'scale(1)';
+                infoCard.style.borderLeftWidth = '4px';
+            });
+        }
+        
+        // Button effects
+        function setupButtonEffects() {
+            const subscribeBtn = document.getElementById('subscribeBtn');
+            
+            subscribeBtn.addEventListener('mouseenter', () => {
+                subscribeBtn.style.background = 'linear-gradient(135deg, #00d4ff, #0088ff)';
+                subscribeBtn.style.transform = 'translateY(-2px)';
+                subscribeBtn.style.boxShadow = '0 5px 15px rgba(0, 179, 255, 0.4)';
+            });
+            
+            subscribeBtn.addEventListener('mouseleave', () => {
+                subscribeBtn.style.background = 'linear-gradient(135deg, #00b3ff, #007bff)';
+                subscribeBtn.style.transform = 'translateY(0)';
+                subscribeBtn.style.boxShadow = 'none';
+            });
+            
+            subscribeBtn.addEventListener('click', () => {
+                subscribeBtn.innerText = 'Subscribed!';
+                subscribeBtn.style.background = 'linear-gradient(135deg, #00ff9d, #00b3ff)';
+                setTimeout(() => {
+                    subscribeBtn.innerText = 'Subscribe';
+                    subscribeBtn.style.background = 'linear-gradient(135deg, #00b3ff, #007bff)';
+                }, 2000);
+            });
+        }
+
+        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            taskModel.init();
+            // Animate title elements
+            setTimeout(() => {
+                document.getElementById('mainTitle').style.opacity = '1';
+                document.getElementById('mainTitle').style.transform = 'translateY(0)';
+            }, 300);
+            
+            setTimeout(() => {
+                document.getElementById('tagline').style.opacity = '1';
+                document.getElementById('tagline').style.transform = 'translateY(0)';
+            }, 800);
+            
+            // Initialize aurora background
+            createAuroraBackground();
+            
+            // Set up other animations
+            setupIntersectionObserver();
+            setupCardHoverEffects();
+            setupButtonEffects();
         });
     </script>
 </body>
