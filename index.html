@@ -3,192 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Aurora - Nature's Gallery</title>
+    <title>CHRONOS - Luxury Timepieces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #111, #050520); color: #fff; min-height: 100vh; overflow-x: hidden;">
-    <!-- Animation Background Layer -->
-    <div id="auroraBackground" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; opacity: 0.7;"></div>
-
-    <!-- Header with Animated Title -->
-    <header style="padding: 2rem 1rem; text-align: center; position: relative; overflow: hidden;">
-        <div style="position: relative; z-index: 2;">
-            <h1 id="mainTitle" style="font-size: 3rem; margin: 0; text-shadow: 0 0 10px rgba(120, 220, 255, 0.8); opacity: 0; transform: translateY(-20px); transition: all 1.5s ease-out;">
-                Northern Lights
-            </h1>
-            <p id="tagline" style="font-size: 1.2rem; margin: 1rem 0 0; color: #b8e8ff; text-shadow: 0 0 5px rgba(120, 220, 255, 0.5); opacity: 0; transform: translateY(20px); transition: all 1.5s ease-out 0.5s;">
-                Nature's most mesmerizing light show
-            </p>
+<body style="margin: 0; padding: 0; font-family: 'Raleway', sans-serif; color: #333; background-color: #f8f8f8; overflow-x: hidden;">
+    <!-- Navigation Bar -->
+    <nav style="position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 5%; max-width: 1400px; margin: 0 auto;">
+            <a href="#" style="text-decoration: none;">
+                <h1 style="font-family: 'Playfair Display', serif; margin: 0; font-size: 1.8rem; color: #1a1a1a; letter-spacing: 2px;">CHRONOS</h1>
+            </a>
+            <div style="display: none;" id="hamburger">
+                <div style="width: 25px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease;"></div>
+                <div style="width: 25px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease;"></div>
+                <div style="width: 25px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease;"></div>
+            </div>
+            <div id="navLinks" style="display: flex; gap: 2rem;">
+                <a href="#collection" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
+                   onmouseover="this.style.color='#c9a66b'" 
+                   onmouseout="this.style.color='#333'">Collection</a>
+                <a href="#craftsmanship" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
+                   onmouseover="this.style.color='#c9a66b'" 
+                   onmouseout="this.style.color='#333'">Craftsmanship</a>
+                <a href="#heritage" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
+                   onmouseover="this.style.color='#c9a66b'" 
+                   onmouseout="this.style.color='#333'">Heritage</a>
+                <a href="#contact" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
+                   onmouseover="this.style.color='#c9a66b'" 
+                   onmouseout="this.style.color='#333'">Contact</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main style="max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem;">
-        <!-- Feature Sections -->
-        <section class="fade-in-section" style="margin-bottom: 3rem; background: rgba(15, 25, 50, 0.6); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out;">
-            <h2 style="color: #7fdbff; margin-top: 0; font-size: 1.8rem;">The Science of Aurora</h2>
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <p style="line-height: 1.7; margin: 0;">
-                    The aurora borealis, or northern lights, occurs when charged particles from the sun collide with gases in Earth's atmosphere. These particles are directed toward the poles by Earth's magnetic field, creating the dancing lights we observe.
+    <!-- Hero Section -->
+    <section style="height: 100vh; display: flex; align-items: center; background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMyMjIyMjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iIzMzMzMzMyIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjIwIiBmaWxsPSIjNDQ0NDQ0Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiBvcGFjaXR5PSIwLjgiLz48L3N2Zz4='); background-size: cover; background-position: center; position: relative; padding: 0 5%;">
+        <div style="max-width: 650px; color: white;">
+            <h1 id="heroTitle" style="font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">Timeless Elegance. Modern Precision.</h1>
+            <p id="heroSubtitle" style="font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.3s;">
+                Crafting exceptional timepieces since 1952. Each watch represents our dedication to precision engineering and timeless design.
+            </p>
+            <div id="heroCta" style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.6s;">
+                <a href="#collection" style="display: inline-block; background-color: #c9a66b; color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: all 0.3s ease;"
+                   onmouseover="this.style.backgroundColor='#b89050'" 
+                   onmouseout="this.style.backgroundColor='#c9a66b'">
+                   EXPLORE COLLECTION
+                </a>
+                <a href="#craftsmanship" style="display: inline-block; color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; letter-spacing: 1px; border: 1px solid white; margin-left: 1rem; border-radius: 2px; transition: all 0.3s ease;"
+                   onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" 
+                   onmouseout="this.style.backgroundColor='transparent'">
+                   OUR STORY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Watch -->
+    <section id="collection" style="padding: 8rem 5%; background-color: white; text-align: center;">
+        <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">The Sovereign Collection</h2>
+        <p class="fade-in-section" style="color: #666; max-width: 700px; margin: 0 auto 4rem; line-height: 1.6; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+            Our flagship timepieces combine traditional craftsmanship with cutting-edge technology, creating watches that are both beautiful and precise.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+            <!-- Watch Item 1 -->
+            <div class="watch-item fade-in-section" style="width: 300px; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+                <div class="watch-image-container" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border-radius: 5px;">
+                    <!-- Circle background for watch -->
+                    <div style="width: 200px; height: 200px; background: radial-gradient(circle, #e8e8e8 0%, transparent 70%); border-radius: 50%;"></div>
+                    <!-- Watch image placeholder - replace with actual image -->
+                    <div style="position: absolute; width: 150px; height: 150px; border: 8px solid #333; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                        <div style="position: absolute; top: 0; left: 50%; width: 8px; height: 20px; background-color: #333; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; bottom: 0; left: 50%; width: 8px; height: 20px; background-color: #333; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 0; top: 50%; height: 8px; width: 20px; background-color: #333; transform: translateY(-50%);"></div>
+                        <div style="position: absolute; right: 0; top: 50%; height: 8px; width: 20px; background-color: #333; transform: translateY(-50%);"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #c9a66b; border-radius: 50%;"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 40px; height: 2px; background-color: #333; transform: translateY(-50%) rotate(45deg);"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 30px; height: 3px; background-color: #c9a66b; transform: translateY(-50%) rotate(-60deg);"></div>
+                    </div>
+                </div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">The Classic</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Automatic Movement</p>
+                <p style="font-weight: 600; color: #c9a66b; font-size: 1.2rem;">$4,500</p>
+            </div>
+
+            <!-- Watch Item 2 -->
+            <div class="watch-item fade-in-section" style="width: 300px; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
+                <div class="watch-image-container" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border-radius: 5px;">
+                    <!-- Circle background for watch -->
+                    <div style="width: 200px; height: 200px; background: radial-gradient(circle, #e8e8e8 0%, transparent 70%); border-radius: 50%;"></div>
+                    <!-- Watch image placeholder -->
+                    <div style="position: absolute; width: 150px; height: 150px; border: 8px solid #222; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                        <div style="position: absolute; top: 0; left: 50%; width: 8px; height: 20px; background-color: #222; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; bottom: 0; left: 50%; width: 8px; height: 20px; background-color: #222; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 0; top: 50%; height: 8px; width: 20px; background-color: #222; transform: translateY(-50%);"></div>
+                        <div style="position: absolute; right: 0; top: 50%; height: 8px; width: 20px; background-color: #222; transform: translateY(-50%);"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #c9a66b; border-radius: 50%;"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 40px; height: 2px; background-color: #222; transform: translateY(-50%) rotate(125deg);"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 30px; height: 3px; background-color: #c9a66b; transform: translateY(-50%) rotate(30deg);"></div>
+                    </div>
+                </div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">The Executive</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Chronograph</p>
+                <p style="font-weight: 600; color: #c9a66b; font-size: 1.2rem;">$6,200</p>
+            </div>
+
+            <!-- Watch Item 3 -->
+            <div class="watch-item fade-in-section" style="width: 300px; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
+                <div class="watch-image-container" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border-radius: 5px;">
+                    <!-- Circle background for watch -->
+                    <div style="width: 200px; height: 200px; background: radial-gradient(circle, #e8e8e8 0%, transparent 70%); border-radius: 50%;"></div>
+                    <!-- Watch image placeholder -->
+                    <div style="position: absolute; width: 150px; height: 150px; border: 8px solid #444; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                        <div style="position: absolute; top: 0; left: 50%; width: 8px; height: 20px; background-color: #444; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; bottom: 0; left: 50%; width: 8px; height: 20px; background-color: #444; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 0; top: 50%; height: 8px; width: 20px; background-color: #444; transform: translateY(-50%);"></div>
+                        <div style="position: absolute; right: 0; top: 50%; height: 8px; width: 20px; background-color: #444; transform: translateY(-50%);"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #c9a66b; border-radius: 50%;"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 40px; height: 2px; background-color: #444; transform: translateY(-50%) rotate(215deg);"></div>
+                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 30px; height: 3px; background-color: #c9a66b; transform: translateY(-50%) rotate(120deg);"></div>
+                    </div>
+                </div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">The Diver</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Water Resistant 300m</p>
+                <p style="font-weight: 600; color: #c9a66b; font-size: 1.2rem;">$5,800</p>
+            </div>
+        </div>
+
+        <a href="#" class="fade-in-section" style="display: inline-block; background-color: #1a1a1a; color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; margin-top: 2rem; transition: all 0.3s ease; opacity: 0; transform: translateY(20px);"
+           onmouseover="this.style.backgroundColor='#333'" 
+           onmouseout="this.style.backgroundColor='#1a1a1a'">
+           VIEW ALL MODELS
+        </a>
+    </section>
+
+    <!-- Craftsmanship Section -->
+    <section id="craftsmanship" style="padding: 8rem 5%; background-color: #f8f8f8; position: relative; overflow: hidden;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <div style="flex: 1; min-width: 300px; padding: 2rem;">
+                <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">Exceptional Craftsmanship</h2>
+                <p class="fade-in-section" style="color: #555; margin-bottom: 1.5rem; line-height: 1.8; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
+                    Every CHRONOS timepiece is meticulously handcrafted by master horologists with decades of experience. Our movements are designed and assembled in our Swiss workshop, where tradition meets innovation.
                 </p>
-                <div id="infoCard" style="background: rgba(10, 20, 40, 0.6); border-left: 4px solid #00b3ff; padding: 1.5rem; border-radius: 6px; margin-top: 1rem; transform-origin: left center; transition: all 0.3s ease;">
-                    <h3 style="margin-top: 0; color: #7fdbff; font-size: 1.3rem;">Did you know?</h3>
-                    <p style="margin-bottom: 0;">
-                        The different colors of the aurora are caused by different gases. Oxygen produces green and red light, while nitrogen creates blue and purple hues.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery -->
-        <section class="fade-in-section" style="margin-bottom: 3rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out 0.2s;">
-            <h2 style="color: #7fdbff; margin-bottom: 1.5rem; font-size: 1.8rem;">Stunning Locations</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div class="location-card" style="background: rgba(15, 25, 50, 0.6); border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                    <div style="height: 180px; background-color: #1a3b5c; display: flex; align-items: center; justify-content: center; color: #7fdbff; font-size: 1.5rem;">Iceland</div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="margin-top: 0; color: #7fdbff;">Iceland</h3>
-                        <p style="margin-bottom: 0; line-height: 1.6;">
-                            One of the best places to witness the northern lights, especially between September and April.
-                        </p>
+                <p class="fade-in-section" style="color: #555; margin-bottom: 2rem; line-height: 1.8; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
+                    We source the finest materials from around the world—surgical-grade stainless steel, sapphire crystals, and ethically sourced precious metals—to create watches that will last for generations.
+                </p>
+                <div class="fade-in-section" style="display: flex; gap: 2rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.6s;">
+                    <div>
+                        <h3 style="font-size: 2rem; color: #c9a66b; margin-bottom: 0.5rem;">70+</h3>
+                        <p style="color: #888; font-size: 0.9rem;">Years of Excellence</p>
                     </div>
-                </div>
-                
-                <div class="location-card" style="background: rgba(15, 25, 50, 0.6); border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                    <div style="height: 180px; background-color: #1a3b5c; display: flex; align-items: center; justify-content: center; color: #7fdbff; font-size: 1.5rem;">Norway</div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="margin-top: 0; color: #7fdbff;">Norway</h3>
-                        <p style="margin-bottom: 0; line-height: 1.6;">
-                            Tromsø in northern Norway is located in the aurora belt, making it ideal for viewing.
-                        </p>
+                    <div>
+                        <h3 style="font-size: 2rem; color: #c9a66b; margin-bottom: 0.5rem;">300+</h3>
+                        <p style="color: #888; font-size: 0.9rem;">Parts Per Watch</p>
                     </div>
-                </div>
-                
-                <div class="location-card" style="background: rgba(15, 25, 50, 0.6); border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
-                    <div style="height: 180px; background-color: #1a3b5c; display: flex; align-items: center; justify-content: center; color: #7fdbff; font-size: 1.5rem;">Finland</div>
-                    <div style="padding: 1.5rem;">
-                        <h3 style="margin-top: 0; color: #7fdbff;">Finland</h3>
-                        <p style="margin-bottom: 0; line-height: 1.6;">
-                            Finnish Lapland offers more than 200 nights per year when the aurora might be visible.
-                        </p>
+                    <div>
+                        <h3 style="font-size: 2rem; color: #c9a66b; margin-bottom: 0.5rem;">5</h3>
+                        <p style="color: #888; font-size: 0.9rem;">Year Warranty</p>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <div style="flex: 1; min-width: 300px; position: relative; min-height: 400px;">
+                <!-- Circular design element -->
+                <div class="fade-in-section" style="width: 400px; height: 400px; border: 1px solid #c9a66b; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: all 1.2s ease;">
+                    <div style="width: 300px; height: 300px; border: 1px solid #c9a66b; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <div style="width: 200px; height: 200px; background-color: #f0ebe2; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            <!-- Watch mechanism graphic -->
+                            <div id="watchMechanism" style="width: 180px; height: 180px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 20s linear infinite;">
+                                <div style="width: 60px; height: 60px; border: 3px solid #222; border-radius: 50%; position: absolute; top: 30px; left: 30px;"></div>
+                                <div style="width: 40px; height: 40px; border: 2px solid #444; border-radius: 50%; position: absolute; top: 110px; left: 100px;"></div>
+                                <div style="width: 20px; height: 20px; border: 1px solid #666; border-radius: 50%; position: absolute; top: 50px; left: 120px;"></div>
+                                <div style="width: 30px; height: 2px; background-color: #c9a66b; position: absolute; top: 60px; left: 60px; transform-origin: left; transform: rotate(30deg);"></div>
+                                <div style="width: 40px; height: 2px; background-color: #c9a66b; position: absolute; top: 120px; left: 100px; transform-origin: left; transform: rotate(-45deg);"></div>
+                                <div style="width: 30px; height: 2px; background-color: #c9a66b; position: absolute; top: 60px; left: 120px; transform-origin: left; transform: rotate(200deg);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Newsletter -->
-        <section class="fade-in-section" style="margin-bottom: 3rem; background: rgba(15, 25, 50, 0.6); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out 0.4s;">
-            <h2 style="color: #7fdbff; margin-top: 0; font-size: 1.8rem;">Stay Updated</h2>
-            <p style="margin-bottom: 1.5rem;">Join our newsletter to receive aurora forecasts and photography tips.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                <input type="email" placeholder="Your email address" 
-                    style="flex: 1; min-width: 200px; padding: 0.8rem; border: none; border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: white; font-size: 1rem; outline: none;">
-                <button id="subscribeBtn" style="padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #00b3ff, #007bff); border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
-                    Subscribe
+    <!-- Heritage Section -->
+    <section id="heritage" style="padding: 8rem 5%; background-color: #1a1a1a; color: white; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">Our Heritage</h2>
+            <p class="fade-in-section" style="color: #ccc; margin-bottom: 3rem; line-height: 1.8; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
+                Founded in 1952 by master watchmaker Henri Chronos, our company has remained family-owned for three generations. We blend traditional Swiss watchmaking techniques with modern innovations to create timepieces of exceptional quality and elegance.
+            </p>
+            
+            <!-- Timeline -->
+            <div style="display: flex; flex-direction: column; gap: 2rem; position: relative; padding-left: 2rem;">
+                <!-- Timeline line -->
+                <div style="width: 2px; background-color: #c9a66b; position: absolute; top: 0; bottom: 0; left: 0;"></div>
+                
+                <!-- Timeline items -->
+                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
+                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">1952</h3>
+                    <p style="color: #ccc; line-height: 1.6;">Henri Chronos establishes the workshop in Geneva, creating the first Sovereign timepiece.</p>
+                </div>
+                
+                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
+                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
+                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">1978</h3>
+                    <p style="color: #ccc; line-height: 1.6;">Introduction of the Diver series, setting new standards for water-resistant luxury timepieces.</p>
+                </div>
+                
+                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
+                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
+                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">2005</h3>
+                    <p style="color: #ccc; line-height: 1.6;">CHRONOS patents its revolutionary self-winding mechanism, used in all our automatic watches today.</p>
+                </div>
+                
+                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.6s;">
+                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
+                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">Today</h3>
+                    <p style="color: #ccc; line-height: 1.6;">With boutiques in 12 countries, CHRONOS continues its legacy of excellence and innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section style="padding: 8rem 5%; background-color: white; text-align: center;">
+        <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">What Our Clients Say</h2>
+        
+        <div id="testimonialContainer" style="position: relative; max-width: 800px; margin: 0 auto; height: 250px;">
+            <!-- Testimonials will be injected here -->
+        </div>
+        
+        <div class="fade-in-section" style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
+            <button id="prevTestimonial" style="width: 40px; height: 40px; border-radius: 50%; background-color: white; border: 1px solid #ccc; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.backgroundColor='#f0f0f0'" 
+                    onmouseout="this.style.backgroundColor='white'">
+                &#8592;
+            </button>
+            <button id="nextTestimonial" style="width: 40px; height: 40px; border-radius: 50%; background-color: white; border: 1px solid #ccc; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.backgroundColor='#f0f0f0'" 
+                    onmouseout="this.style.backgroundColor='white'">
+                &#8594;
+            </button>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="contact" style="padding: 6rem 5%; background-color: #f8f8f8; text-align: center;">
+        <div class="fade-in-section" style="max-width: 600px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Join Our Community</h2>
+            <p style="color: #666; margin-bottom: 2rem; line-height: 1.6;">
+                Subscribe to our newsletter for exclusive offers, new releases, and behind-the-scenes content.
+            </p>
+            <div style="display: flex; max-width: 500px; margin: 0 auto; border-radius: 3px; overflow: hidden;">
+                <input type="email" placeholder="Your email address" style="flex: 1; padding: 1rem; border: 1px solid #ddd; border-right: none; outline: none;">
+                <button style="background-color: #c9a66b; color: white; border: none; padding: 1rem 2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;"
+                        onmouseover="this.style.backgroundColor='#b89050'" 
+                        onmouseout="this.style.backgroundColor='#c9a66b'">
+                    SUBSCRIBE
                 </button>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer style="text-align: center; padding: 2rem 1rem; color: #7fdbff; background: rgba(10, 15, 30, 0.8);">
-        <p>© 2025 Northern Lights Explorer | Created with ♥ for nature's wonders</p>
-        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-            <a href="#" class="social-link" style="color: #7fdbff; text-decoration: none; transition: all 0.3s ease;"
-               onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'; this.style.textShadow='0 0 10px rgba(127, 219, 255, 0.8)';" 
-               onmouseout="this.style.color='#7fdbff'; this.style.transform='translateY(0)'; this.style.textShadow='none';">
-                Instagram
-            </a>
-            <a href="#" class="social-link" style="color: #7fdbff; text-decoration: none; transition: all 0.3s ease;"
-               onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'; this.style.textShadow='0 0 10px rgba(127, 219, 255, 0.8)';" 
-               onmouseout="this.style.color='#7fdbff'; this.style.transform='translateY(0)'; this.style.textShadow='none';">
-                Twitter
-            </a>
-            <a href="#" class="social-link" style="color: #7fdbff; text-decoration: none; transition: all 0.3s ease;"
-               onmouseover="this.style.color='#ffffff'; this.style.transform='translateY(-3px)'; this.style.textShadow='0 0 10px rgba(127, 219, 255, 0.8)';" 
-               onmouseout="this.style.color='#7fdbff'; this.style.transform='translateY(0)'; this.style.textShadow='none';">
-                Facebook
-            </a>
+    <footer style="background-color: #1a1a1a; color: white; padding: 4rem 5% 2rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem;">CHRONOS</h3>
+                <p style="color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
+                    Crafting exceptional timepieces that blend tradition with innovation since 1952.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: #c9a66b; font-size: 1.2rem; text-decoration: none;" 
+                       onmouseover="this.style.color='white'" 
+                       onmouseout="this.style.color='#c9a66b'">
+                        &#9733; <!-- Star symbol for social icon -->
+                    </a>
+                    <a href="#" style="color: #c9a66b; font-size: 1.2rem; text-decoration: none;" 
+                       onmouseover="this.style.color='white'" 
+                       onmouseout="this.style.color='#c9a66b'">
+                        &#9734; <!-- Empty star symbol for social icon -->
+                    </a>
+                    <a href="#" style="color: #c9a66b; font-size: 1.2rem; text-decoration: none;" 
+                       onmouseover="this.style.color='white'" 
+                       onmouseout="this.style.color='#c9a66b'">
+                        &#9829; <!-- Heart symbol for social icon -->
+                    </a>
+                </div>
+            </div>
+            
+            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
+                <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">COLLECTIONS</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            The Classic Series
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            Executive Collection
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            Diver Professional
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            Limited Editions
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
+                <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">CUSTOMER SERVICE</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            Find a Boutique
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            Watch Care & Service
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            Warranty Information
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
+                           onmouseover="this.style.color='#c9a66b'" 
+                           onmouseout="this.style.color='#999'">
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
+                <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">CONTACT US</h4>
+                <p style="color: #999; margin-bottom: 0.8rem;">
+                    <strong style="color: #c9a66b;">Email:</strong> contact@chronos.example
+                </p>
+                <p style="color: #999; margin-bottom: 0.8rem;">
+                    <strong style="color: #c9a66b;">Phone:</strong> +41 22 123 4567
+                </p>
+                <p style="color: #999; margin-bottom: 0.8rem;">
+                    <strong style="color: #c9a66b;">Headquarters:</strong><br>
+                    Rue du Rhône 62<br>
+                    Geneva, Switzerland<br>
+                    CH-1204
+                </p>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid #333; padding-top: 2rem; margin-top: 2rem; text-align: center;">
+            <p style="color: #777; font-size: 0.9rem;">
+                &copy; 2025 CHRONOS. All rights reserved. | <a href="#" style="color: #777; text-decoration: none;" onmouseover="this.style.color='#c9a66b'" onmouseout="this.style.color='#777'">Privacy Policy</a> | <a href="#" style="color: #777; text-decoration: none;" onmouseover="this.style.color='#c9a66b'" onmouseout="this.style.color='#777'">Terms of Service</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Inline JavaScript for Animations and Effects -->
+    <!-- Inline JavaScript -->
     <script>
-        // Aurora Background Animation
-        function createAuroraBackground() {
-            const container = document.getElementById('auroraBackground');
-            const canvasCount = 5;
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate hero section elements
+            document.getElementById('heroTitle').style.opacity = '1';
+            document.getElementById('heroTitle').style.transform = 'translateY(0)';
             
-            for (let i = 0; i < canvasCount; i++) {
-                const canvas = document.createElement('canvas');
-                canvas.style.position = 'absolute';
-                canvas.style.top = '0';
-                canvas.style.left = '0';
-                canvas.style.width = '100%';
-                canvas.style.height = '100%';
-                canvas.style.opacity = (0.3 / canvasCount) * (i + 1);
-                canvas.style.zIndex = i;
-                container.appendChild(canvas);
-                
-                const ctx = canvas.getContext('2d');
-                const colorMultiplier = i / canvasCount;
-                
-                function resize() {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                }
-                
-                function animate() {
-                    // Clear canvas
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    
-                    // Generate aurora wave
-                    const time = Date.now() * 0.001;
-                    const speed = 0.2 + i * 0.05;
-                    const amplitude = 50 + i * 10;
-                    const wavelength = 0.01 - i * 0.001;
-                    
-                    const r = 20 + (100 * colorMultiplier);
-                    const g = 120 + (80 * (1 - colorMultiplier));
-                    const b = 200 - (50 * colorMultiplier);
-                    
-                    ctx.beginPath();
-                    ctx.moveTo(0, canvas.height);
-                    
-                    for (let x = 0; x < canvas.width; x += 5) {
-                        const y = Math.sin((x * wavelength) + (time * speed)) * amplitude + 
-                                canvas.height * (0.4 + (0.1 * i)) + 
-                                Math.sin((x * 0.003) + (time * 0.2)) * (20 + i * 5);
-                        ctx.lineTo(x, y);
-                    }
-                    
-                    ctx.lineTo(canvas.width, canvas.height);
-                    ctx.closePath();
-                    
-                    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-                    gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0)`);
-                    gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, 0.3)`);
-                    gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
-                    
-                    ctx.fillStyle = gradient;
-                    ctx.fill();
-                    
-                    requestAnimationFrame(animate);
-                }
-                
-                resize();
-                animate();
-                
-                window.addEventListener('resize', resize);
-            }
-        }
+            document.getElementById('heroSubtitle').style.opacity = '1';
+            document.getElementById('heroSubtitle').style.transform = 'translateY(0)';
+            
+            document.getElementById('heroCta').style.opacity = '1';
+            document.getElementById('heroCta').style.transform = 'translateY(0)';
+            
+            // Animate watch mechanism
+            document.getElementById('watchMechanism').style.transform = 'translate(-50%, -50%) rotate(3600deg)';
+            
+            // Set up intersection observer for fade-in animations
+            setupIntersectionObserver();
+            
+            // Setup testimonials
+            setupTestimonials();
+            
+            // Setup mobile navigation
+            setupMobileNav();
+            
+            // Shrinking header on scroll
+            setupScrollHeader();
+        });
         
-        // Observe elements and animate them when they enter viewport
+        // Intersection Observer for scroll animations
         function setupIntersectionObserver() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
@@ -197,80 +432,161 @@
                 observer.observe(section);
             });
         }
-
-        // Hover effects for cards
-        function setupCardHoverEffects() {
-            document.querySelectorAll('.location-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-10px)';
-                    card.style.boxShadow = '0 15px 30px rgba(0, 179, 255, 0.2)';
-                });
+        
+        // Testimonials slider functionality
+        function setupTestimonials() {
+            const testimonials = [
+                {
+                    text: "My CHRONOS watch has been with me for over 20 years, through business meetings, diving adventures, and family celebrations. It's more than a timepiece; it's a part of my life story.",
+                    author: "James Richardson",
+                    title: "CEO, Global Ventures"
+                },
+                {
+                    text: "The craftsmanship and attention to detail in my Executive Chronograph is unmatched. It's an investment piece that I plan to pass down to my son one day.",
+                    author: "Emily Zhao",
+                    title: "Architect & Watch Collector"
+                },
+                {
+                    text: "As a professional diver, I need equipment I can rely on. My CHRONOS Diver has never failed me, even in the most challenging underwater conditions.",
+                    author: "Marco Rossi",
+                    title: "Marine Biologist"
+                }
+            ];
+            
+            let currentIndex = 0;
+            const container = document.getElementById('testimonialContainer');
+            
+            // Create and display testimonials
+            function renderTestimonial(index) {
+                // Clear container
+                container.innerHTML = '';
                 
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                    card.style.boxShadow = 'none';
+                // Create testimonial
+                const testimonial = document.createElement('div');
+                testimonial.style.opacity = '0';
+                testimonial.style.transform = 'translateY(10px)';
+                testimonial.style.transition = 'all 0.5s ease';
+                testimonial.style.position = 'absolute';
+                testimonial.style.top = '0';
+                testimonial.style.left = '0';
+                testimonial.style.right = '0';
+                
+                testimonial.innerHTML = `
+                    <p style="font-size: 1.2rem; color: #555; line-height: 1.8; font-style: italic; margin-bottom: 2rem;">
+                        "${testimonials[index].text}"
+                    </p>
+                    <h4 style="color: #333; font-family: 'Playfair Display', serif; margin-bottom: 0.3rem;">
+                        ${testimonials[index].author}
+                    </h4>
+                    <p style="color: #888; font-size: 0.9rem;">${testimonials[index].title}</p>
+                `;
+                
+                container.appendChild(testimonial);
+                
+                // Animate in
+                setTimeout(() => {
+                    testimonial.style.opacity = '1';
+                    testimonial.style.transform = 'translateY(0)';
+                }, 50);
+            }
+            
+            // Initialize first testimonial
+            renderTestimonial(currentIndex);
+            
+            // Set up navigation
+            document.getElementById('prevTestimonial').addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                renderTestimonial(currentIndex);
+            });
+            
+            document.getElementById('nextTestimonial').addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                renderTestimonial(currentIndex);
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                renderTestimonial(currentIndex);
+            }, 8000);
+        }
+        
+        // Mobile navigation setup
+        function setupMobileNav() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            // Show hamburger on smaller screens
+            function checkScreenSize() {
+                if (window.innerWidth < 768) {
+                    hamburger.style.display = 'block';
+                    navLinks.style.display = 'none';
+                } else {
+                    hamburger.style.display = 'none';
+                    navLinks.style.display = 'flex';
+                    navLinks.style.transform = 'translateY(0)';
+                }
+            }
+            
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+            
+            // Toggle menu
+            hamburger.addEventListener('click', function() {
+                if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+                    navLinks.style.display = 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.backgroundColor = 'white';
+                    navLinks.style.padding = '1rem';
+                    navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                    navLinks.style.transform = 'translateY(0)';
+                    navLinks.style.opacity = '1';
+                } else {
+                    navLinks.style.display = 'none';
+                }
+            });
+            
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (window.innerWidth < 768) {
+                            navLinks.style.display = 'none';
+                        }
+                    }
                 });
-            });
-            
-            const infoCard = document.getElementById('infoCard');
-            infoCard.addEventListener('mouseenter', () => {
-                infoCard.style.transform = 'scale(1.03)';
-                infoCard.style.borderLeftWidth = '8px';
-            });
-            
-            infoCard.addEventListener('mouseleave', () => {
-                infoCard.style.transform = 'scale(1)';
-                infoCard.style.borderLeftWidth = '4px';
             });
         }
         
-        // Button effects
-        function setupButtonEffects() {
-            const subscribeBtn = document.getElementById('subscribeBtn');
+        // Shrinking header on scroll
+        function setupScrollHeader() {
+            const nav = document.querySelector('nav');
             
-            subscribeBtn.addEventListener('mouseenter', () => {
-                subscribeBtn.style.background = 'linear-gradient(135deg, #00d4ff, #0088ff)';
-                subscribeBtn.style.transform = 'translateY(-2px)';
-                subscribeBtn.style.boxShadow = '0 5px 15px rgba(0, 179, 255, 0.4)';
-            });
-            
-            subscribeBtn.addEventListener('mouseleave', () => {
-                subscribeBtn.style.background = 'linear-gradient(135deg, #00b3ff, #007bff)';
-                subscribeBtn.style.transform = 'translateY(0)';
-                subscribeBtn.style.boxShadow = 'none';
-            });
-            
-            subscribeBtn.addEventListener('click', () => {
-                subscribeBtn.innerText = 'Subscribed!';
-                subscribeBtn.style.background = 'linear-gradient(135deg, #00ff9d, #00b3ff)';
-                setTimeout(() => {
-                    subscribeBtn.innerText = 'Subscribe';
-                    subscribeBtn.style.background = 'linear-gradient(135deg, #00b3ff, #007bff)';
-                }, 2000);
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.style.padding = '0.4rem 0';
+                    nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                } else {
+                    nav.style.padding = '0.8rem 0';
+                    nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                }
             });
         }
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate title elements
-            setTimeout(() => {
-                document.getElementById('mainTitle').style.opacity = '1';
-                document.getElementById('mainTitle').style.transform = 'translateY(0)';
-            }, 300);
-            
-            setTimeout(() => {
-                document.getElementById('tagline').style.opacity = '1';
-                document.getElementById('tagline').style.transform = 'translateY(0)';
-            }, 800);
-            
-            // Initialize aurora background
-            createAuroraBackground();
-            
-            // Set up other animations
-            setupIntersectionObserver();
-            setupCardHoverEffects();
-            setupButtonEffects();
-        });
     </script>
 </body>
 </html>
