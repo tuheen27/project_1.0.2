@@ -3,588 +3,704 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHRONOS - Luxury Timepieces</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Animation Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Raleway', sans-serif; color: #333; background-color: #f8f8f8; overflow-x: hidden;">
-    <!-- Navigation Bar -->
-    <nav style="position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 5%; max-width: 1400px; margin: 0 auto;">
-            <a href="#" style="text-decoration: none;">
-                <h1 style="font-family: 'Playfair Display', serif; margin: 0; font-size: 1.8rem; color: #1a1a1a; letter-spacing: 2px;">CHRONOS</h1>
-            </a>
-            <div style="display: none;" id="hamburger">
-                <div style="width: 25px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease;"></div>
-                <div style="width: 25px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease;"></div>
-                <div style="width: 25px; height: 3px; background-color: #333; margin: 5px 0; transition: all 0.3s ease;"></div>
-            </div>
-            <div id="navLinks" style="display: flex; gap: 2rem;">
-                <a href="#collection" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
-                   onmouseover="this.style.color='#c9a66b'" 
-                   onmouseout="this.style.color='#333'">Collection</a>
-                <a href="#craftsmanship" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
-                   onmouseover="this.style.color='#c9a66b'" 
-                   onmouseout="this.style.color='#333'">Craftsmanship</a>
-                <a href="#heritage" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
-                   onmouseover="this.style.color='#c9a66b'" 
-                   onmouseout="this.style.color='#333'">Heritage</a>
-                <a href="#contact" style="text-decoration: none; color: #333; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; position: relative; transition: all 0.3s ease;" 
-                   onmouseover="this.style.color='#c9a66b'" 
-                   onmouseout="this.style.color='#333'">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section style="height: 100vh; display: flex; align-items: center; background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMyMjIyMjIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iIzMzMzMzMyIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjIwIiBmaWxsPSIjNDQ0NDQ0Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiBvcGFjaXR5PSIwLjgiLz48L3N2Zz4='); background-size: cover; background-position: center; position: relative; padding: 0 5%;">
-        <div style="max-width: 650px; color: white;">
-            <h1 id="heroTitle" style="font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">Timeless Elegance. Modern Precision.</h1>
-            <p id="heroSubtitle" style="font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.3s;">
-                Crafting exceptional timepieces since 1952. Each watch represents our dedication to precision engineering and timeless design.
-            </p>
-            <div id="heroCta" style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.6s;">
-                <a href="#collection" style="display: inline-block; background-color: #c9a66b; color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; transition: all 0.3s ease;"
-                   onmouseover="this.style.backgroundColor='#b89050'" 
-                   onmouseout="this.style.backgroundColor='#c9a66b'">
-                   EXPLORE COLLECTION
-                </a>
-                <a href="#craftsmanship" style="display: inline-block; color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; letter-spacing: 1px; border: 1px solid white; margin-left: 1rem; border-radius: 2px; transition: all 0.3s ease;"
-                   onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" 
-                   onmouseout="this.style.backgroundColor='transparent'">
-                   OUR STORY
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Watch -->
-    <section id="collection" style="padding: 8rem 5%; background-color: white; text-align: center;">
-        <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">The Sovereign Collection</h2>
-        <p class="fade-in-section" style="color: #666; max-width: 700px; margin: 0 auto 4rem; line-height: 1.6; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
-            Our flagship timepieces combine traditional craftsmanship with cutting-edge technology, creating watches that are both beautiful and precise.
+<body style="margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: #333; background-color: #f9f9f9; overflow-x: hidden;">
+    <!-- Animated Background -->
+    <div id="animated-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6;"></div>
+    
+    <!-- Header Section with Animated Text -->
+    <header style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; position: relative; overflow: hidden;">
+        <h1 id="animated-title" style="font-size: 3.5rem; margin-bottom: 1rem; opacity: 0; transform: translateY(30px); transition: all 1s ease;">
+            Animation <span style="color: #4a6de5;">Showcase</span>
+        </h1>
+        <p id="animated-subtitle" style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; opacity: 0; transform: translateY(20px); transition: all 1s ease 0.3s;">
+            A collection of stunning web animations created with pure JavaScript and CSS
         </p>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-            <!-- Watch Item 1 -->
-            <div class="watch-item fade-in-section" style="width: 300px; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
-                <div class="watch-image-container" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border-radius: 5px;">
-                    <!-- Circle background for watch -->
-                    <div style="width: 200px; height: 200px; background: radial-gradient(circle, #e8e8e8 0%, transparent 70%); border-radius: 50%;"></div>
-                    <!-- Watch image placeholder - replace with actual image -->
-                    <div style="position: absolute; width: 150px; height: 150px; border: 8px solid #333; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-                        <div style="position: absolute; top: 0; left: 50%; width: 8px; height: 20px; background-color: #333; transform: translateX(-50%);"></div>
-                        <div style="position: absolute; bottom: 0; left: 50%; width: 8px; height: 20px; background-color: #333; transform: translateX(-50%);"></div>
-                        <div style="position: absolute; left: 0; top: 50%; height: 8px; width: 20px; background-color: #333; transform: translateY(-50%);"></div>
-                        <div style="position: absolute; right: 0; top: 50%; height: 8px; width: 20px; background-color: #333; transform: translateY(-50%);"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #c9a66b; border-radius: 50%;"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 40px; height: 2px; background-color: #333; transform: translateY(-50%) rotate(45deg);"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 30px; height: 3px; background-color: #c9a66b; transform: translateY(-50%) rotate(-60deg);"></div>
-                    </div>
-                </div>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">The Classic</h3>
-                <p style="color: #888; margin-bottom: 1rem;">Automatic Movement</p>
-                <p style="font-weight: 600; color: #c9a66b; font-size: 1.2rem;">$4,500</p>
-            </div>
-
-            <!-- Watch Item 2 -->
-            <div class="watch-item fade-in-section" style="width: 300px; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
-                <div class="watch-image-container" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border-radius: 5px;">
-                    <!-- Circle background for watch -->
-                    <div style="width: 200px; height: 200px; background: radial-gradient(circle, #e8e8e8 0%, transparent 70%); border-radius: 50%;"></div>
-                    <!-- Watch image placeholder -->
-                    <div style="position: absolute; width: 150px; height: 150px; border: 8px solid #222; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-                        <div style="position: absolute; top: 0; left: 50%; width: 8px; height: 20px; background-color: #222; transform: translateX(-50%);"></div>
-                        <div style="position: absolute; bottom: 0; left: 50%; width: 8px; height: 20px; background-color: #222; transform: translateX(-50%);"></div>
-                        <div style="position: absolute; left: 0; top: 50%; height: 8px; width: 20px; background-color: #222; transform: translateY(-50%);"></div>
-                        <div style="position: absolute; right: 0; top: 50%; height: 8px; width: 20px; background-color: #222; transform: translateY(-50%);"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #c9a66b; border-radius: 50%;"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 40px; height: 2px; background-color: #222; transform: translateY(-50%) rotate(125deg);"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 30px; height: 3px; background-color: #c9a66b; transform: translateY(-50%) rotate(30deg);"></div>
-                    </div>
-                </div>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">The Executive</h3>
-                <p style="color: #888; margin-bottom: 1rem;">Chronograph</p>
-                <p style="font-weight: 600; color: #c9a66b; font-size: 1.2rem;">$6,200</p>
-            </div>
-
-            <!-- Watch Item 3 -->
-            <div class="watch-item fade-in-section" style="width: 300px; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
-                <div class="watch-image-container" style="height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; position: relative; overflow: hidden; border-radius: 5px;">
-                    <!-- Circle background for watch -->
-                    <div style="width: 200px; height: 200px; background: radial-gradient(circle, #e8e8e8 0%, transparent 70%); border-radius: 50%;"></div>
-                    <!-- Watch image placeholder -->
-                    <div style="position: absolute; width: 150px; height: 150px; border: 8px solid #444; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-                        <div style="position: absolute; top: 0; left: 50%; width: 8px; height: 20px; background-color: #444; transform: translateX(-50%);"></div>
-                        <div style="position: absolute; bottom: 0; left: 50%; width: 8px; height: 20px; background-color: #444; transform: translateX(-50%);"></div>
-                        <div style="position: absolute; left: 0; top: 50%; height: 8px; width: 20px; background-color: #444; transform: translateY(-50%);"></div>
-                        <div style="position: absolute; right: 0; top: 50%; height: 8px; width: 20px; background-color: #444; transform: translateY(-50%);"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background-color: #c9a66b; border-radius: 50%;"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 40px; height: 2px; background-color: #444; transform: translateY(-50%) rotate(215deg);"></div>
-                        <div style="position: absolute; top: 50%; left: 50%; transform-origin: left; width: 30px; height: 3px; background-color: #c9a66b; transform: translateY(-50%) rotate(120deg);"></div>
-                    </div>
-                </div>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">The Diver</h3>
-                <p style="color: #888; margin-bottom: 1rem;">Water Resistant 300m</p>
-                <p style="font-weight: 600; color: #c9a66b; font-size: 1.2rem;">$5,800</p>
-            </div>
+        <div id="animated-button" style="opacity: 0; transform: translateY(20px); transition: all 1s ease 0.6s;">
+            <a href="#animations" style="display: inline-block; background-color: #4a6de5; color: white; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(74, 109, 229, 0.3); transition: all 0.3s ease; position: relative; overflow: hidden;"
+               onmouseover="this.style.backgroundColor='#3857c0'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(74, 109, 229, 0.4)'" 
+               onmouseout="this.style.backgroundColor='#4a6de5'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(74, 109, 229, 0.3)'">
+                Explore Animations
+                <div class="button-ripple" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; background-color: rgba(255,255,255,0.3); border-radius: 50%;"></div>
+            </a>
         </div>
-
-        <a href="#" class="fade-in-section" style="display: inline-block; background-color: #1a1a1a; color: white; padding: 0.8rem 2rem; text-decoration: none; font-weight: 600; letter-spacing: 1px; border-radius: 2px; margin-top: 2rem; transition: all 0.3s ease; opacity: 0; transform: translateY(20px);"
-           onmouseover="this.style.backgroundColor='#333'" 
-           onmouseout="this.style.backgroundColor='#1a1a1a'">
-           VIEW ALL MODELS
-        </a>
-    </section>
-
-    <!-- Craftsmanship Section -->
-    <section id="craftsmanship" style="padding: 8rem 5%; background-color: #f8f8f8; position: relative; overflow: hidden;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-            <div style="flex: 1; min-width: 300px; padding: 2rem;">
-                <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">Exceptional Craftsmanship</h2>
-                <p class="fade-in-section" style="color: #555; margin-bottom: 1.5rem; line-height: 1.8; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
-                    Every CHRONOS timepiece is meticulously handcrafted by master horologists with decades of experience. Our movements are designed and assembled in our Swiss workshop, where tradition meets innovation.
-                </p>
-                <p class="fade-in-section" style="color: #555; margin-bottom: 2rem; line-height: 1.8; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
-                    We source the finest materials from around the world—surgical-grade stainless steel, sapphire crystals, and ethically sourced precious metals—to create watches that will last for generations.
-                </p>
-                <div class="fade-in-section" style="display: flex; gap: 2rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.6s;">
-                    <div>
-                        <h3 style="font-size: 2rem; color: #c9a66b; margin-bottom: 0.5rem;">70+</h3>
-                        <p style="color: #888; font-size: 0.9rem;">Years of Excellence</p>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 2rem; color: #c9a66b; margin-bottom: 0.5rem;">300+</h3>
-                        <p style="color: #888; font-size: 0.9rem;">Parts Per Watch</p>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 2rem; color: #c9a66b; margin-bottom: 0.5rem;">5</h3>
-                        <p style="color: #888; font-size: 0.9rem;">Year Warranty</p>
-                    </div>
+        
+        <!-- Animated shapes -->
+        <div class="floating-shape" id="shape1" style="position: absolute; top: 15%; left: 15%; width: 60px; height: 60px; background: linear-gradient(45deg, #4a6de5, #6b8cff); border-radius: 12px; opacity: 0; transform: rotate(45deg); box-shadow: 0 4px 10px rgba(74, 109, 229, 0.3);"></div>
+        
+        <div class="floating-shape" id="shape2" style="position: absolute; bottom: 20%; right: 10%; width: 40px; height: 40px; background: linear-gradient(45deg, #ff6b6b, #ff9e9e); border-radius: 50%; opacity: 0; box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);"></div>
+        
+        <div class="floating-shape" id="shape3" style="position: absolute; top: 25%; right: 20%; width: 80px; height: 80px; border: 3px solid #6b8cff; border-radius: 50%; opacity: 0; box-shadow: 0 0 20px rgba(107, 140, 255, 0.15);"></div>
+        
+        <div class="floating-shape" id="shape4" style="position: absolute; bottom: 25%; left: 20%; width: 30px; height: 30px; background: linear-gradient(45deg, #ffbe3d, #ffda85); border-radius: 6px; opacity: 0; transform: rotate(15deg); box-shadow: 0 4px 10px rgba(255, 190, 61, 0.3);"></div>
+    </header>
+    
+    <!-- Animation Sections -->
+    <main id="animations" style="padding: 4rem 5%; max-width: 1200px; margin: 0 auto;">
+        <!-- Section 1: Parallax Effect -->
+        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
+                Parallax Effect
+                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
+            </h2>
+            
+            <div class="parallax-container" style="height: 300px; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <!-- Parallax layers -->
+                <div class="parallax-layer bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, #2d3a8c, #4a6de5); transform: translateZ(-600px) scale(3);"></div>
+                
+                <div class="parallax-layer mountains" style="position: absolute; bottom: 0; width: 100%; height: 60%; background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wLDEwMCBMNTAsMzAgTDEwMCwxMDAgWiIgZmlsbD0iIzI0MzQ3MyIgLz48cGF0aCBkPSJNMCwxMDAgTDMwLDUwIEw3MCw4MCBMMTAWIQ0wIFoiIGZpbGw9IiMxZDJiNjMiIC8+PC9zdmc+'); background-size: cover; transform: translateZ(-400px) scale(2.33);"></div>
+                
+                <div class="parallax-layer hills" style="position: absolute; bottom: 0; width: 100%; height: 40%; background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wLDEwMCBDMjAsODAgNDAsOTAgNjAsODAgQzgwLDcwIDEwMCw4MCAxMDAsMTAwIFoiIGZpbGw9IiMzMTQxODAiIC8+PC9zdmc+'); background-size: cover; transform: translateZ(-200px) scale(1.66);"></div>
+                
+                <div class="parallax-layer text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(0); color: white; text-align: center; width: 100%;">
+                    <h3 style="font-size: 2.5rem; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Depth & Motion</h3>
+                    <p style="font-size: 1.1rem; margin-top: 0.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">Move your mouse to see the effect</p>
                 </div>
             </div>
+        </section>
+        
+        <!-- Section 2: Animated Counter -->
+        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
+                Animated Counters
+                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
+            </h2>
             
-            <div style="flex: 1; min-width: 300px; position: relative; min-height: 400px;">
-                <!-- Circular design element -->
-                <div class="fade-in-section" style="width: 400px; height: 400px; border: 1px solid #c9a66b; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: all 1.2s ease;">
-                    <div style="width: 300px; height: 300px; border: 1px solid #c9a66b; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                        <div style="width: 200px; height: 200px; background-color: #f0ebe2; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                            <!-- Watch mechanism graphic -->
-                            <div id="watchMechanism" style="width: 180px; height: 180px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 20s linear infinite;">
-                                <div style="width: 60px; height: 60px; border: 3px solid #222; border-radius: 50%; position: absolute; top: 30px; left: 30px;"></div>
-                                <div style="width: 40px; height: 40px; border: 2px solid #444; border-radius: 50%; position: absolute; top: 110px; left: 100px;"></div>
-                                <div style="width: 20px; height: 20px; border: 1px solid #666; border-radius: 50%; position: absolute; top: 50px; left: 120px;"></div>
-                                <div style="width: 30px; height: 2px; background-color: #c9a66b; position: absolute; top: 60px; left: 60px; transform-origin: left; transform: rotate(30deg);"></div>
-                                <div style="width: 40px; height: 2px; background-color: #c9a66b; position: absolute; top: 120px; left: 100px; transform-origin: left; transform: rotate(-45deg);"></div>
-                                <div style="width: 30px; height: 2px; background-color: #c9a66b; position: absolute; top: 60px; left: 120px; transform-origin: left; transform: rotate(200deg);"></div>
-                            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; text-align: center;">
+                <div class="counter-container" style="flex: 1; min-width: 200px; padding: 2rem; background-color: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.1)'" 
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.05)'">
+                    <div style="width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(45deg, #4a6de5, #6b8cff); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(74, 109, 229, 0.3);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="white"/>
+                            <path d="M12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 class="counter" data-target="1287" style="font-size: 2.5rem; color: #333; margin: 0 0 0.5rem;">0</h3>
+                    <p style="color: #777; margin: 0; font-size: 1rem;">Projects Completed</p>
+                </div>
+                
+                <div class="counter-container" style="flex: 1; min-width: 200px; padding: 2rem; background-color: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.1)'" 
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.05)'">
+                    <div style="width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(45deg, #ff6b6b, #ff9e9e); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 class="counter" data-target="853" style="font-size: 2.5rem; color: #333; margin: 0 0 0.5rem;">0</h3>
+                    <p style="color: #777; margin: 0; font-size: 1rem;">Happy Clients</p>
+                </div>
+                
+                <div class="counter-container" style="flex: 1; min-width: 200px; padding: 2rem; background-color: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.1)'" 
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.05)'">
+                    <div style="width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(45deg, #ffbe3d, #ffda85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(255, 190, 61, 0.3);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 class="counter" data-target="92" style="font-size: 2.5rem; color: #333; margin: 0 0 0.5rem;">0</h3>
+                    <p style="color: #777; margin: 0; font-size: 1rem;">Awards Won</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: Animated Cards -->
+        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
+                Interactive Cards
+                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
+            </h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+                <div class="card tilt-card" style="flex: 1; min-width: 280px; max-width: 320px; height: 220px; background: linear-gradient(45deg, #4a6de5, #6b8cff); border-radius: 16px; padding: 1.5rem; color: white; position: relative; overflow: hidden; transform-style: preserve-3d; transform: perspective(1000px); box-shadow: 0 10px 30px rgba(74, 109, 229, 0.3);">
+                    <div class="card-content" style="position: relative; z-index: 1; transform: translateZ(40px);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
+                            <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="white" stroke-width="2"/>
+                        </svg>
+                        <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">3D Tilt Effect</h3>
+                        <p style="margin: 0; line-height: 1.5; font-weight: 300;">Hover over this card to see a realistic 3D tilt effect that follows your cursor movement.</p>
+                    </div>
+                    <div class="card-shine" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2), transparent); opacity: 0; transition: all 0.3s ease;"></div>
+                </div>
+                
+                <div class="card flip-card-container" style="flex: 1; min-width: 280px; max-width: 320px; height: 220px; perspective: 1000px;">
+                    <div class="flip-card" style="position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; cursor: pointer;">
+                        <div class="flip-card-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: linear-gradient(45deg, #ff6b6b, #ff9e9e); border-radius: 16px; padding: 1.5rem; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 9L17 5V3H7V5L3 9H21Z" fill="white"/>
+                                <path d="M21 9H3V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V9Z" fill="white" fill-opacity="0.5"/>
+                                <path d="M10 12H14V17H10V12Z" fill="white"/>
+                            </svg>
+                            <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Flip Card</h3>
+                            <p style="margin: 0; font-weight: 300;">Click this card to see it flip and reveal content on the back</p>
+                        </div>
+                        <div class="flip-card-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: white; border-radius: 16px; padding: 1.5rem; color: #333; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                            <h3 style="margin: 0 0 1rem; color: #ff6b6b;">Hello there!</h3>
+                            <p style="margin: 0; line-height: 1.5;">This is the back of the card. Click again to flip back to the front.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Heritage Section -->
-    <section id="heritage" style="padding: 8rem 5%; background-color: #1a1a1a; color: white; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">Our Heritage</h2>
-            <p class="fade-in-section" style="color: #ccc; margin-bottom: 3rem; line-height: 1.8; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
-                Founded in 1952 by master watchmaker Henri Chronos, our company has remained family-owned for three generations. We blend traditional Swiss watchmaking techniques with modern innovations to create timepieces of exceptional quality and elegance.
-            </p>
-            
-            <!-- Timeline -->
-            <div style="display: flex; flex-direction: column; gap: 2rem; position: relative; padding-left: 2rem;">
-                <!-- Timeline line -->
-                <div style="width: 2px; background-color: #c9a66b; position: absolute; top: 0; bottom: 0; left: 0;"></div>
                 
-                <!-- Timeline items -->
-                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
-                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
-                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">1952</h3>
-                    <p style="color: #ccc; line-height: 1.6;">Henri Chronos establishes the workshop in Geneva, creating the first Sovereign timepiece.</p>
-                </div>
-                
-                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.2s;">
-                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
-                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">1978</h3>
-                    <p style="color: #ccc; line-height: 1.6;">Introduction of the Diver series, setting new standards for water-resistant luxury timepieces.</p>
-                </div>
-                
-                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
-                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
-                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">2005</h3>
-                    <p style="color: #ccc; line-height: 1.6;">CHRONOS patents its revolutionary self-winding mechanism, used in all our automatic watches today.</p>
-                </div>
-                
-                <div class="fade-in-section timeline-item" style="text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.6s;">
-                    <div style="width: 14px; height: 14px; background-color: #c9a66b; border-radius: 50%; position: absolute; left: -6px; top: 0;"></div>
-                    <h3 style="font-family: 'Playfair Display', serif; color: #c9a66b; margin-bottom: 0.5rem;">Today</h3>
-                    <p style="color: #ccc; line-height: 1.6;">With boutiques in 12 countries, CHRONOS continues its legacy of excellence and innovation.</p>
+                <div class="card morph-card" style="flex: 1; min-width: 280px; max-width: 320px; height: 220px; background: white; border-radius: 16px; padding: 1.5rem; color: #333; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column;">
+                        <div style="margin-bottom: auto;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ffbe3d;">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Morphing Effect</h3>
+                            <p style="margin: 0; color: #777; line-height: 1.5;">Hover over this card to see it transform with a smooth morphing effect.</p>
+                        </div>
+                        <div style="margin-top: auto; text-align: right;">
+                            <span style="display: inline-block; padding: 8px 16px; background: #f0f0f0; border-radius: 30px; font-size: 0.875rem; color: #777; transition: all 0.3s ease;">Hover Me</span>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #ffbe3d, #ffda85);"></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section style="padding: 8rem 5%; background-color: white; text-align: center;">
-        <h2 class="fade-in-section" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">What Our Clients Say</h2>
+        </section>
         
-        <div id="testimonialContainer" style="position: relative; max-width: 800px; margin: 0 auto; height: 250px;">
-            <!-- Testimonials will be injected here -->
-        </div>
-        
-        <div class="fade-in-section" style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; opacity: 0; transform: translateY(20px); transition: all 0.8s ease 0.4s;">
-            <button id="prevTestimonial" style="width: 40px; height: 40px; border-radius: 50%; background-color: white; border: 1px solid #ccc; cursor: pointer; transition: all 0.3s ease;"
-                    onmouseover="this.style.backgroundColor='#f0f0f0'" 
-                    onmouseout="this.style.backgroundColor='white'">
-                &#8592;
-            </button>
-            <button id="nextTestimonial" style="width: 40px; height: 40px; border-radius: 50%; background-color: white; border: 1px solid #ccc; cursor: pointer; transition: all 0.3s ease;"
-                    onmouseover="this.style.backgroundColor='#f0f0f0'" 
-                    onmouseout="this.style.backgroundColor='white'">
-                &#8594;
-            </button>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section id="contact" style="padding: 6rem 5%; background-color: #f8f8f8; text-align: center;">
-        <div class="fade-in-section" style="max-width: 600px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Join Our Community</h2>
-            <p style="color: #666; margin-bottom: 2rem; line-height: 1.6;">
-                Subscribe to our newsletter for exclusive offers, new releases, and behind-the-scenes content.
-            </p>
-            <div style="display: flex; max-width: 500px; margin: 0 auto; border-radius: 3px; overflow: hidden;">
-                <input type="email" placeholder="Your email address" style="flex: 1; padding: 1rem; border: 1px solid #ddd; border-right: none; outline: none;">
-                <button style="background-color: #c9a66b; color: white; border: none; padding: 1rem 2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;"
-                        onmouseover="this.style.backgroundColor='#b89050'" 
-                        onmouseout="this.style.backgroundColor='#c9a66b'">
-                    SUBSCRIBE
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background-color: #1a1a1a; color: white; padding: 4rem 5% 2rem;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
-            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem;">CHRONOS</h3>
-                <p style="color: #999; line-height: 1.6; margin-bottom: 1.5rem;">
-                    Crafting exceptional timepieces that blend tradition with innovation since 1952.
-                </p>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="#" style="color: #c9a66b; font-size: 1.2rem; text-decoration: none;" 
-                       onmouseover="this.style.color='white'" 
-                       onmouseout="this.style.color='#c9a66b'">
-                        &#9733; <!-- Star symbol for social icon -->
-                    </a>
-                    <a href="#" style="color: #c9a66b; font-size: 1.2rem; text-decoration: none;" 
-                       onmouseover="this.style.color='white'" 
-                       onmouseout="this.style.color='#c9a66b'">
-                        &#9734; <!-- Empty star symbol for social icon -->
-                    </a>
-                    <a href="#" style="color: #c9a66b; font-size: 1.2rem; text-decoration: none;" 
-                       onmouseover="this.style.color='white'" 
-                       onmouseout="this.style.color='#c9a66b'">
-                        &#9829; <!-- Heart symbol for social icon -->
-                    </a>
+        <!-- Section 4: Animated Text -->
+        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
+                Text Animation
+                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
+            </h2>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div class="text-animation-container" style="padding: 3rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                        <div style="overflow: hidden;">
+                            <h3 style="font-size: 2.5rem; margin: 0; display: inline-block;">I create </h3>
+                        </div>
+                        <div class="changing-text" style="overflow: hidden; height: 60px; position: relative; margin-left: 12px;">
+                            <span class="text-item" data-color="#4a6de5" style="position: absolute; opacity: 1; font-size: 2.5rem; color: #4a6de5; font-weight: 700; transform: translateY(0); transition: all 0.5s ease;">animations</span>
+                            <span class="text-item" data-color="#ff6b6b" style="position: absolute; opacity: 0; font-size: 2.5rem; color: #ff6b6b; font-weight: 700; transform: translateY(60px); transition: all 0.5s ease;">experiences</span>
+                            <span class="text-item" data-color="#ffbe3d" style="position: absolute; opacity: 0; font-size: 2.5rem; color: #ffbe3d; font-weight: 700; transform: translateY(60px); transition: all 0.5s ease;">interfaces</span>
+                            <span class="text-item" data-color="#2ecc71" style="position: absolute; opacity: 0; font-size: 2.5rem; color: #2ecc71; font-weight: 700; transform: translateY(60px); transition: all 0.5s ease;">solutions</span>
+                        </div>
+                    </div>
+                    
+                    <p class="typing-text" style="position: relative; font-size: 1.25rem; color: #555; margin: 0 auto; max-width: 500px; text-align: center; height: 60px;"></p>
+                    <div class="cursor" style="display: inline-block; width: 2px; height: 1em; background: #333; margin-left: 2px; vertical-align: middle; animation: blink 1s infinite;"></div>
                 </div>
             </div>
-            
-            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
-                <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">COLLECTIONS</h4>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            The Classic Series
-                        </a>
-                    </li>
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            Executive Collection
-                        </a>
-                    </li>
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            Diver Professional
-                        </a>
-                    </li>
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            Limited Editions
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
-                <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">CUSTOMER SERVICE</h4>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            Find a Boutique
-                        </a>
-                    </li>
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            Watch Care & Service
-                        </a>
-                    </li>
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            Warranty Information
-                        </a>
-                    </li>
-                    <li style="margin-bottom: 0.8rem;">
-                        <a href="#" style="color: #999; text-decoration: none; transition: all 0.3s ease;" 
-                           onmouseover="this.style.color='#c9a66b'" 
-                           onmouseout="this.style.color='#999'">
-                            FAQ
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div style="flex: 1; min-width: 250px; margin-bottom: 2rem;">
-                <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">CONTACT US</h4>
-                <p style="color: #999; margin-bottom: 0.8rem;">
-                    <strong style="color: #c9a66b;">Email:</strong> contact@chronos.example
-                </p>
-                <p style="color: #999; margin-bottom: 0.8rem;">
-                    <strong style="color: #c9a66b;">Phone:</strong> +41 22 123 4567
-                </p>
-                <p style="color: #999; margin-bottom: 0.8rem;">
-                    <strong style="color: #c9a66b;">Headquarters:</strong><br>
-                    Rue du Rhône 62<br>
-                    Geneva, Switzerland<br>
-                    CH-1204
-                </p>
-            </div>
-        </div>
+        </section>
         
-        <div style="border-top: 1px solid #333; padding-top: 2rem; margin-top: 2rem; text-align: center;">
-            <p style="color: #777; font-size: 0.9rem;">
-                &copy; 2025 CHRONOS. All rights reserved. | <a href="#" style="color: #777; text-decoration: none;" onmouseover="this.style.color='#c9a66b'" onmouseout="this.style.color='#777'">Privacy Policy</a> | <a href="#" style="color: #777; text-decoration: none;" onmouseover="this.style.color='#c9a66b'" onmouseout="this.style.color='#777'">Terms of Service</a>
-            </p>
-        </div>
+        <!-- Section 5: Loading Animations -->
+        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
+                Loading Animations
+                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
+            </h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div class="spinner" style="width: 40px; height: 40px; border: 4px solid rgba(74, 109, 229, 0.2); border-top: 4px solid #4a6de5; border-radius: 50%; margin-bottom: 1rem;"></div>
+                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Simple Spinner</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div class="pulse-loader" style="width: 40px; height: 40px; background-color: #ff6b6b; border-radius: 50%; margin-bottom: 1rem;"></div>
+                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Pulse Animation</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div class="dots-container" style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                        <div class="dot" style="width: 10px; height: 10px; background-color: #ffbe3d; border-radius: 50%;"></div>
+                        <div class="dot" style="width: 10px; height: 10px; background-color: #ffbe3d; border-radius: 50%; animation-delay: 0.2s;"></div>
+                        <div class="dot" style="width: 10px; height: 10px; background-color: #ffbe3d; border-radius: 50%; animation-delay: 0.4s;"></div>
+                    </div>
+                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Bouncing Dots</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <div class="progress-bar-container" style="width: 80%; height: 6px; background-color: #f0f0f0; border-radius: 3px; overflow: hidden; margin-bottom: 1rem;">
+                        <div class="progress-bar" style="height: 100%; width: 0; background: linear-gradient(90deg, #4a6de5, #6b8cff); border-radius: 3px; transition: width 1.5s ease-in-out;"></div>
+                    </div>
+                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Progress Bar</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer style="background-color: #f0f0f0; padding: 4rem 5% 2rem; text-align: center;">
+        <p style="margin: 0 0 1rem; color: #777;">Designed with ❤️ by Your Name</p>
+        <p style="margin: 0; color: #999; font-size: 0.9rem;">&copy; 2025 Animation Showcase</p>
     </footer>
+
+    <!-- Add CSS Animations -->
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); }
+            50% { transform: translateY(-20px) rotate(45deg); }
+            100% { transform: translateY(0) rotate(45deg); }
+        }
+        
+        @keyframes float-reverse {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+            100% { transform: translateY(0); }
+        }
+        
+        @keyframes rotation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes spinner {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        @keyframes shine {
+            from { transform: translateX(-100%) rotate(45deg); }
+            to { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        @keyframes particle-animation {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x), var(--y));
+                opacity: 0;
+            }
+        }
+        
+        .spinner {
+            animation: spinner 1s linear infinite;
+        }
+        
+        .pulse-loader {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        .dot {
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        
+        /* Add this to HTML head if not already present */
+        body:before {
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ebedee 100%);
+        }
+    </style>
 
     <!-- Inline JavaScript -->
     <script>
-        // Initialize animations when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate hero section elements
-            document.getElementById('heroTitle').style.opacity = '1';
-            document.getElementById('heroTitle').style.transform = 'translateY(0)';
+            // Animate header elements
+            setTimeout(() => {
+                document.getElementById('animated-title').style.opacity = '1';
+                document.getElementById('animated-title').style.transform = 'translateY(0)';
+            }, 300);
             
-            document.getElementById('heroSubtitle').style.opacity = '1';
-            document.getElementById('heroSubtitle').style.transform = 'translateY(0)';
+            setTimeout(() => {
+                document.getElementById('animated-subtitle').style.opacity = '1';
+                document.getElementById('animated-subtitle').style.transform = 'translateY(0)';
+            }, 600);
             
-            document.getElementById('heroCta').style.opacity = '1';
-            document.getElementById('heroCta').style.transform = 'translateY(0)';
+            setTimeout(() => {
+                document.getElementById('animated-button').style.opacity = '1';
+                document.getElementById('animated-button').style.transform = 'translateY(0)';
+            }, 900);
             
-            // Animate watch mechanism
-            document.getElementById('watchMechanism').style.transform = 'translate(-50%, -50%) rotate(3600deg)';
+            // Animate floating shapes
+            const shapes = document.querySelectorAll('.floating-shape');
+            shapes.forEach((shape, index) => {
+                setTimeout(() => {
+                    shape.style.opacity = '1';
+                    
+                    if (shape.id === 'shape1') {
+                        shape.style.animation = 'float 6s ease-in-out infinite';
+                    } else if (shape.id === 'shape2') {
+                        shape.style.animation = 'float-reverse 7s ease-in-out infinite';
+                    } else if (shape.id === 'shape3') {
+                        shape.style.animation = 'float 8s ease-in-out infinite 1s';
+                    } else if (shape.id === 'shape4') {
+                        shape.style.animation = 'float-reverse 6s ease-in-out infinite 0.5s';
+                    }
+                }, 1200 + (index * 200));
+            });
             
-            // Set up intersection observer for fade-in animations
-            setupIntersectionObserver();
-            
-            // Setup testimonials
-            setupTestimonials();
-            
-            // Setup mobile navigation
-            setupMobileNav();
-            
-            // Shrinking header on scroll
-            setupScrollHeader();
-        });
-        
-        // Intersection Observer for scroll animations
-        function setupIntersectionObserver() {
+            // Setup intersection observer for fade-in animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                         observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                observer.observe(section);
-            });
-        }
-        
-        // Testimonials slider functionality
-        function setupTestimonials() {
-            const testimonials = [
-                {
-                    text: "My CHRONOS watch has been with me for over 20 years, through business meetings, diving adventures, and family celebrations. It's more than a timepiece; it's a part of my life story.",
-                    author: "James Richardson",
-                    title: "CEO, Global Ventures"
-                },
-                {
-                    text: "The craftsmanship and attention to detail in my Executive Chronograph is unmatched. It's an investment piece that I plan to pass down to my son one day.",
-                    author: "Emily Zhao",
-                    title: "Architect & Watch Collector"
-                },
-                {
-                    text: "As a professional diver, I need equipment I can rely on. My CHRONOS Diver has never failed me, even in the most challenging underwater conditions.",
-                    author: "Marco Rossi",
-                    title: "Marine Biologist"
-                }
-            ];
-            
-            let currentIndex = 0;
-            const container = document.getElementById('testimonialContainer');
-            
-            // Create and display testimonials
-            function renderTestimonial(index) {
-                // Clear container
-                container.innerHTML = '';
-                
-                // Create testimonial
-                const testimonial = document.createElement('div');
-                testimonial.style.opacity = '0';
-                testimonial.style.transform = 'translateY(10px)';
-                testimonial.style.transition = 'all 0.5s ease';
-                testimonial.style.position = 'absolute';
-                testimonial.style.top = '0';
-                testimonial.style.left = '0';
-                testimonial.style.right = '0';
-                
-                testimonial.innerHTML = `
-                    <p style="font-size: 1.2rem; color: #555; line-height: 1.8; font-style: italic; margin-bottom: 2rem;">
-                        "${testimonials[index].text}"
-                    </p>
-                    <h4 style="color: #333; font-family: 'Playfair Display', serif; margin-bottom: 0.3rem;">
-                        ${testimonials[index].author}
-                    </h4>
-                    <p style="color: #888; font-size: 0.9rem;">${testimonials[index].title}</p>
-                `;
-                
-                container.appendChild(testimonial);
-                
-                // Animate in
-                setTimeout(() => {
-                    testimonial.style.opacity = '1';
-                    testimonial.style.transform = 'translateY(0)';
-                }, 50);
-            }
-            
-            // Initialize first testimonial
-            renderTestimonial(currentIndex);
-            
-            // Set up navigation
-            document.getElementById('prevTestimonial').addEventListener('click', function() {
-                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-                renderTestimonial(currentIndex);
-            });
-            
-            document.getElementById('nextTestimonial').addEventListener('click', function() {
-                currentIndex = (currentIndex + 1) % testimonials.length;
-                renderTestimonial(currentIndex);
-            });
-            
-            // Auto-rotate testimonials
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % testimonials.length;
-                renderTestimonial(currentIndex);
-            }, 8000);
-        }
-        
-        // Mobile navigation setup
-        function setupMobileNav() {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-            
-            // Show hamburger on smaller screens
-            function checkScreenSize() {
-                if (window.innerWidth < 768) {
-                    hamburger.style.display = 'block';
-                    navLinks.style.display = 'none';
-                } else {
-                    hamburger.style.display = 'none';
-                    navLinks.style.display = 'flex';
-                    navLinks.style.transform = 'translateY(0)';
-                }
-            }
-            
-            checkScreenSize();
-            window.addEventListener('resize', checkScreenSize);
-            
-            // Toggle menu
-            hamburger.addEventListener('click', function() {
-                if (navLinks.style.display === 'none' || navLinks.style.display === '') {
-                    navLinks.style.display = 'flex';
-                    navLinks.style.flexDirection = 'column';
-                    navLinks.style.position = 'absolute';
-                    navLinks.style.top = '100%';
-                    navLinks.style.left = '0';
-                    navLinks.style.right = '0';
-                    navLinks.style.backgroundColor = 'white';
-                    navLinks.style.padding = '1rem';
-                    navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                    navLinks.style.transform = 'translateY(0)';
-                    navLinks.style.opacity = '1';
-                } else {
-                    navLinks.style.display = 'none';
-                }
-            });
-            
-            // Smooth scroll for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
                         
-                        // Close mobile menu if open
-                        if (window.innerWidth < 768) {
-                            navLinks.style.display = 'none';
+                        // If this is the counters section, start the counter
+                        if (entry.target.querySelector('.counter')) {
+                            startCounters();
+                        }
+                        
+                        // If this is the progress bar section, start the progress bar
+                        if (entry.target.querySelector('.progress-bar')) {
+                            setTimeout(() => {
+                                document.querySelector('.progress-bar').style.width = '80%';
+                            }, 300);
                         }
                     }
                 });
+            }, { threshold: 0.2 });
+            
+            document.querySelectorAll('.animation-section').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Setup animated background
+            createParticles();
+            
+            // Setup the parallax effect
+            setupParallax();
+            
+            // Setup the tilt effect
+            setupTiltEffect();
+            
+            // Setup the flip card
+            setupFlipCard();
+            
+            // Setup the morph card
+            setupMorphCard();
+            
+            // Setup the button ripple effect
+            setupRippleEffect();
+            
+            // Setup the text animation
+            setupTextAnimation();
+            
+            // Setup typing animation
+            setupTypingAnimation();
+            
+            // Smooth scroll
+            setupSmoothScroll();
+        });
+        
+        // Create particles for the background
+        function createParticles() {
+            const container = document.getElementById('animated-bg');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                const size = Math.random() * 6 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                // Assign random movement direction
+                const xMovement = (Math.random() - 0.5) * 200;
+                const yMovement = (Math.random() - 0.5) * 200;
+                
+                particle.style.position = 'absolute';
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.backgroundColor = i % 3 === 0 ? '#4a6de5' : i % 3 === 1 ? '#ff6b6b' : '#ffbe3d';
+                particle.style.borderRadius = '50%';
+                particle.style.left = posX + '%';
+                particle.style.top = posY + '%';
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                
+                // Set custom properties for the animation
+                particle.style.setProperty('--x', xMovement + 'px');
+                particle.style.setProperty('--y', yMovement + 'px');
+                
+                // Set animation properties
+                const duration = Math.random() * 30 + 15;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ${delay}s infinite alternate ease-in-out`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Parallax effect
+        function setupParallax() {
+            const parallaxContainer = document.querySelector('.parallax-container');
+            
+            if (!parallaxContainer) return;
+            
+            parallaxContainer.addEventListener('mousemove', function(e) {
+                const xPos = (e.clientX / this.offsetWidth) - 0.5;
+                const yPos = (e.clientY / this.offsetHeight) - 0.5;
+                
+                const layers = this.querySelectorAll('.parallax-layer');
+                
+                layers.forEach(layer => {
+                    let speed = 1;
+                    if (layer.classList.contains('bg')) speed = 20;
+                    else if (layer.classList.contains('mountains')) speed = 30;
+                    else if (layer.classList.contains('hills')) speed = 40;
+                    
+                    const xMovement = xPos * speed;
+                    const yMovement = yPos * speed;
+                    
+                    layer.style.transform = `translate3d(${xMovement}px, ${yMovement}px, 0)`;
+                });
+                
+                // Also animate the text for a subtle effect
+                const text = this.querySelector('.parallax-layer.text');
+                if (text) {
+                    text.style.transform = `translate(-50%, -50%) translate3d(${xPos * 10}px, ${yPos * 10}px, 0)`;
+                }
             });
         }
         
-        // Shrinking header on scroll
-        function setupScrollHeader() {
-            const nav = document.querySelector('nav');
+        // Start counters animation
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // The lower the faster
             
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    nav.style.padding = '0.4rem 0';
-                    nav.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                } else {
-                    nav.style.padding = '0.8rem 0';
-                    nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / speed;
+                
+                function updateCount() {
+                    const count = +counter.innerText;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
                 }
+                
+                updateCount();
+            });
+        }
+        
+        // Setup 3D tilt effect
+        function setupTiltEffect() {
+            const cards = document.querySelectorAll('.tilt-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const angleY = (x - centerX) / 8;
+                    const angleX = (centerY - y) / 8;
+                    
+                    this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+                    
+                    // Also update the shine effect
+                    const shine = this.querySelector('.card-shine');
+                    shine.style.opacity = '1';
+                    shine.style.backgroundPosition = `${x / 5 + y / 5}%`;
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                    
+                    // Hide the shine effect
+                    const shine = this.querySelector('.card-shine');
+                    shine.style.opacity = '0';
+                });
+            });
+        }
+        
+        // Setup flip card
+        function setupFlipCard() {
+            const flipCardContainer = document.querySelector('.flip-card-container');
+            
+            if (!flipCardContainer) return;
+            
+            flipCardContainer.addEventListener('click', function() {
+                const flipCard = this.querySelector('.flip-card');
+                if (flipCard.style.transform === 'rotateY(180deg)') {
+                    flipCard.style.transform = 'rotateY(0)';
+                } else {
+                    flipCard.style.transform = 'rotateY(180deg)';
+                }
+            });
+        }
+        
+        // Setup morph card
+        function setupMorphCard() {
+            const morphCards = document.querySelectorAll('.morph-card');
+            
+            morphCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.borderRadius = '50px';
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+                    
+                    // Also update the hover button
+                    const button = this.querySelector('span');
+                    button.style.backgroundColor = '#ffbe3d';
+                    button.style.color = 'white';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.borderRadius = '16px';
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                    
+                    // Reset the button
+                    const button = this.querySelector('span');
+                    button.style.backgroundColor = '#f0f0f0';
+                    button.style.color = '#777';
+                });
+            });
+        }
+        
+        // Setup button ripple effect
+        function setupRippleEffect() {
+            const buttons = document.querySelectorAll('a[href="#animations"]');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = this.querySelector('.button-ripple');
+                    
+                    // Make sure the ripple is displayed
+                    ripple.style.display = 'block';
+                    
+                    // Calculate the ripple position and size
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height) * 2;
+                    
+                    // Position the ripple
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    
+                    // Animate the ripple
+                    ripple.style.animation = 'none';
+                    setTimeout(() => {
+                        ripple.style.animation = 'ripple 0.8s ease-out';
+                    }, 10);
+                    
+                    // Clean up
+                    setTimeout(() => {
+                        ripple.style.display = 'none';
+                    }, 800);
+                });
+            });
+        }
+        
+        // Setup changing text animation
+        function setupTextAnimation() {
+            const items = document.querySelectorAll('.changing-text .text-item');
+            let currentIndex = 0;
+            
+            function changeText() {
+                // Hide current item
+                items[currentIndex].style.opacity = '0';
+                items[currentIndex].style.transform = 'translateY(-60px)';
+                
+                // Show next item
+                currentIndex = (currentIndex + 1) % items.length;
+                setTimeout(() => {
+                    // Update all items' positions
+                    items.forEach((item, idx) => {
+                        if (idx === currentIndex) {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        } else {
+                            item.style.transform = 'translateY(60px)';
+                        }
+                    });
+                }, 500);
+                
+                // Schedule next change
+                setTimeout(changeText, 3000);
+            }
+            
+            // Start the animation
+            setTimeout(changeText, 3000);
+        }
+        
+        // Setup typing animation
+        function setupTypingAnimation() {
+            const typingText = document.querySelector('.typing-text');
+            const texts = [
+                "Animations can make your website more engaging.",
+                "Users love interactive experiences.",
+                "Creative design improves user retention.",
+                "Let's make the web more beautiful together."
+            ];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            
+            function type() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    // Deleting text
+                    typingText.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50; // Faster when deleting
+                } else {
+                    // Typing text
+                    typingText.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100; // Normal speed when typing
+                }
+                
+                // If all chars typed
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    typingSpeed = 1000; // Wait before deleting
+                }
+                
+                // If deleted all chars
+                else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typingSpeed = 500; // Wait before typing new text
+                }
+                
+                setTimeout(type, typingSpeed);
+            }
+            
+            // Start the typing animation
+            setTimeout(type, 1500);
+        }
+        
+        // Setup smooth scroll
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
             });
         }
     </script>
