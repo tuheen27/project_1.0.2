@@ -3,706 +3,1160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation Showcase</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body style="margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: #333; background-color: #f9f9f9; overflow-x: hidden;">
-    <!-- Animated Background -->
-    <div id="animated-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6;"></div>
-    
-    <!-- Header Section with Animated Text -->
-    <header style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; position: relative; overflow: hidden;">
-        <h1 id="animated-title" style="font-size: 3.5rem; margin-bottom: 1rem; opacity: 0; transform: translateY(30px); transition: all 1s ease;">
-            Animation <span style="color: #4a6de5;">Showcase</span>
-        </h1>
-        <p id="animated-subtitle" style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; opacity: 0; transform: translateY(20px); transition: all 1s ease 0.3s;">
-            A collection of stunning web animations created with pure JavaScript and CSS
-        </p>
-        <div id="animated-button" style="opacity: 0; transform: translateY(20px); transition: all 1s ease 0.6s;">
-            <a href="#animations" style="display: inline-block; background-color: #4a6de5; color: white; padding: 12px 30px; text-decoration: none; border-radius: 30px; font-weight: 600; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(74, 109, 229, 0.3); transition: all 0.3s ease; position: relative; overflow: hidden;"
-               onmouseover="this.style.backgroundColor='#3857c0'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(74, 109, 229, 0.4)'" 
-               onmouseout="this.style.backgroundColor='#4a6de5'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(74, 109, 229, 0.3)'">
-                Explore Animations
-                <div class="button-ripple" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; background-color: rgba(255,255,255,0.3); border-radius: 50%;"></div>
-            </a>
-        </div>
-        
-        <!-- Animated shapes -->
-        <div class="floating-shape" id="shape1" style="position: absolute; top: 15%; left: 15%; width: 60px; height: 60px; background: linear-gradient(45deg, #4a6de5, #6b8cff); border-radius: 12px; opacity: 0; transform: rotate(45deg); box-shadow: 0 4px 10px rgba(74, 109, 229, 0.3);"></div>
-        
-        <div class="floating-shape" id="shape2" style="position: absolute; bottom: 20%; right: 10%; width: 40px; height: 40px; background: linear-gradient(45deg, #ff6b6b, #ff9e9e); border-radius: 50%; opacity: 0; box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);"></div>
-        
-        <div class="floating-shape" id="shape3" style="position: absolute; top: 25%; right: 20%; width: 80px; height: 80px; border: 3px solid #6b8cff; border-radius: 50%; opacity: 0; box-shadow: 0 0 20px rgba(107, 140, 255, 0.15);"></div>
-        
-        <div class="floating-shape" id="shape4" style="position: absolute; bottom: 25%; left: 20%; width: 30px; height: 30px; background: linear-gradient(45deg, #ffbe3d, #ffda85); border-radius: 6px; opacity: 0; transform: rotate(15deg); box-shadow: 0 4px 10px rgba(255, 190, 61, 0.3);"></div>
-    </header>
-    
-    <!-- Animation Sections -->
-    <main id="animations" style="padding: 4rem 5%; max-width: 1200px; margin: 0 auto;">
-        <!-- Section 1: Parallax Effect -->
-        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
-                Parallax Effect
-                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
-            </h2>
-            
-            <div class="parallax-container" style="height: 300px; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <!-- Parallax layers -->
-                <div class="parallax-layer bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, #2d3a8c, #4a6de5); transform: translateZ(-600px) scale(3);"></div>
-                
-                <div class="parallax-layer mountains" style="position: absolute; bottom: 0; width: 100%; height: 60%; background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wLDEwMCBMNTAsMzAgTDEwMCwxMDAgWiIgZmlsbD0iIzI0MzQ3MyIgLz48cGF0aCBkPSJNMCwxMDAgTDMwLDUwIEw3MCw4MCBMMTAWIQ0wIFoiIGZpbGw9IiMxZDJiNjMiIC8+PC9zdmc+'); background-size: cover; transform: translateZ(-400px) scale(2.33);"></div>
-                
-                <div class="parallax-layer hills" style="position: absolute; bottom: 0; width: 100%; height: 40%; background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wLDEwMCBDMjAsODAgNDAsOTAgNjAsODAgQzgwLDcwIDEwMCw4MCAxMDAsMTAwIFoiIGZpbGw9IiMzMTQxODAiIC8+PC9zdmc+'); background-size: cover; transform: translateZ(-200px) scale(1.66);"></div>
-                
-                <div class="parallax-layer text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(0); color: white; text-align: center; width: 100%;">
-                    <h3 style="font-size: 2.5rem; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Depth & Motion</h3>
-                    <p style="font-size: 1.1rem; margin-top: 0.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">Move your mouse to see the effect</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section 2: Animated Counter -->
-        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
-                Animated Counters
-                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
-            </h2>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; text-align: center;">
-                <div class="counter-container" style="flex: 1; min-width: 200px; padding: 2rem; background-color: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease;"
-                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.1)'" 
-                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.05)'">
-                    <div style="width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(45deg, #4a6de5, #6b8cff); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(74, 109, 229, 0.3);">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="white"/>
-                            <path d="M12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <h3 class="counter" data-target="1287" style="font-size: 2.5rem; color: #333; margin: 0 0 0.5rem;">0</h3>
-                    <p style="color: #777; margin: 0; font-size: 1rem;">Projects Completed</p>
-                </div>
-                
-                <div class="counter-container" style="flex: 1; min-width: 200px; padding: 2rem; background-color: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease;"
-                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.1)'" 
-                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.05)'">
-                    <div style="width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(45deg, #ff6b6b, #ff9e9e); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <h3 class="counter" data-target="853" style="font-size: 2.5rem; color: #333; margin: 0 0 0.5rem;">0</h3>
-                    <p style="color: #777; margin: 0; font-size: 1rem;">Happy Clients</p>
-                </div>
-                
-                <div class="counter-container" style="flex: 1; min-width: 200px; padding: 2rem; background-color: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: all 0.3s ease;"
-                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.1)'" 
-                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.05)'">
-                    <div style="width: 70px; height: 70px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(45deg, #ffbe3d, #ffda85); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(255, 190, 61, 0.3);">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <h3 class="counter" data-target="92" style="font-size: 2.5rem; color: #333; margin: 0 0 0.5rem;">0</h3>
-                    <p style="color: #777; margin: 0; font-size: 1rem;">Awards Won</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section 3: Animated Cards -->
-        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
-                Interactive Cards
-                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
-            </h2>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-                <div class="card tilt-card" style="flex: 1; min-width: 280px; max-width: 320px; height: 220px; background: linear-gradient(45deg, #4a6de5, #6b8cff); border-radius: 16px; padding: 1.5rem; color: white; position: relative; overflow: hidden; transform-style: preserve-3d; transform: perspective(1000px); box-shadow: 0 10px 30px rgba(74, 109, 229, 0.3);">
-                    <div class="card-content" style="position: relative; z-index: 1; transform: translateZ(40px);">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white"/>
-                            <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="white" stroke-width="2"/>
-                        </svg>
-                        <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">3D Tilt Effect</h3>
-                        <p style="margin: 0; line-height: 1.5; font-weight: 300;">Hover over this card to see a realistic 3D tilt effect that follows your cursor movement.</p>
-                    </div>
-                    <div class="card-shine" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2), transparent); opacity: 0; transition: all 0.3s ease;"></div>
-                </div>
-                
-                <div class="card flip-card-container" style="flex: 1; min-width: 280px; max-width: 320px; height: 220px; perspective: 1000px;">
-                    <div class="flip-card" style="position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; cursor: pointer;">
-                        <div class="flip-card-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: linear-gradient(45deg, #ff6b6b, #ff9e9e); border-radius: 16px; padding: 1.5rem; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 9L17 5V3H7V5L3 9H21Z" fill="white"/>
-                                <path d="M21 9H3V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V9Z" fill="white" fill-opacity="0.5"/>
-                                <path d="M10 12H14V17H10V12Z" fill="white"/>
-                            </svg>
-                            <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Flip Card</h3>
-                            <p style="margin: 0; font-weight: 300;">Click this card to see it flip and reveal content on the back</p>
-                        </div>
-                        <div class="flip-card-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: white; border-radius: 16px; padding: 1.5rem; color: #333; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
-                            <h3 style="margin: 0 0 1rem; color: #ff6b6b;">Hello there!</h3>
-                            <p style="margin: 0; line-height: 1.5;">This is the back of the card. Click again to flip back to the front.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card morph-card" style="flex: 1; min-width: 280px; max-width: 320px; height: 220px; background: white; border-radius: 16px; padding: 1.5rem; color: #333; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-                    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column;">
-                        <div style="margin-bottom: auto;">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #ffbe3d;">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            <h3 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Morphing Effect</h3>
-                            <p style="margin: 0; color: #777; line-height: 1.5;">Hover over this card to see it transform with a smooth morphing effect.</p>
-                        </div>
-                        <div style="margin-top: auto; text-align: right;">
-                            <span style="display: inline-block; padding: 8px 16px; background: #f0f0f0; border-radius: 30px; font-size: 0.875rem; color: #777; transition: all 0.3s ease;">Hover Me</span>
-                        </div>
-                    </div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #ffbe3d, #ffda85);"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section 4: Animated Text -->
-        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
-                Text Animation
-                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
-            </h2>
-            
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="text-animation-container" style="padding: 3rem; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-                    <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
-                        <div style="overflow: hidden;">
-                            <h3 style="font-size: 2.5rem; margin: 0; display: inline-block;">I create </h3>
-                        </div>
-                        <div class="changing-text" style="overflow: hidden; height: 60px; position: relative; margin-left: 12px;">
-                            <span class="text-item" data-color="#4a6de5" style="position: absolute; opacity: 1; font-size: 2.5rem; color: #4a6de5; font-weight: 700; transform: translateY(0); transition: all 0.5s ease;">animations</span>
-                            <span class="text-item" data-color="#ff6b6b" style="position: absolute; opacity: 0; font-size: 2.5rem; color: #ff6b6b; font-weight: 700; transform: translateY(60px); transition: all 0.5s ease;">experiences</span>
-                            <span class="text-item" data-color="#ffbe3d" style="position: absolute; opacity: 0; font-size: 2.5rem; color: #ffbe3d; font-weight: 700; transform: translateY(60px); transition: all 0.5s ease;">interfaces</span>
-                            <span class="text-item" data-color="#2ecc71" style="position: absolute; opacity: 0; font-size: 2.5rem; color: #2ecc71; font-weight: 700; transform: translateY(60px); transition: all 0.5s ease;">solutions</span>
-                        </div>
-                    </div>
-                    
-                    <p class="typing-text" style="position: relative; font-size: 1.25rem; color: #555; margin: 0 auto; max-width: 500px; text-align: center; height: 60px;"></p>
-                    <div class="cursor" style="display: inline-block; width: 2px; height: 1em; background: #333; margin-left: 2px; vertical-align: middle; animation: blink 1s infinite;"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section 5: Loading Animations -->
-        <section class="animation-section" style="margin-bottom: 8rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; position: relative; display: inline-block;">
-                Loading Animations
-                <span style="position: absolute; bottom: -10px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #4a6de5, transparent);"></span>
-            </h2>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-                    <div class="spinner" style="width: 40px; height: 40px; border: 4px solid rgba(74, 109, 229, 0.2); border-top: 4px solid #4a6de5; border-radius: 50%; margin-bottom: 1rem;"></div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Simple Spinner</p>
-                </div>
-                
-                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-                    <div class="pulse-loader" style="width: 40px; height: 40px; background-color: #ff6b6b; border-radius: 50%; margin-bottom: 1rem;"></div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Pulse Animation</p>
-                </div>
-                
-                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-                    <div class="dots-container" style="display: flex; gap: 6px; margin-bottom: 1rem;">
-                        <div class="dot" style="width: 10px; height: 10px; background-color: #ffbe3d; border-radius: 50%;"></div>
-                        <div class="dot" style="width: 10px; height: 10px; background-color: #ffbe3d; border-radius: 50%; animation-delay: 0.2s;"></div>
-                        <div class="dot" style="width: 10px; height: 10px; background-color: #ffbe3d; border-radius: 50%; animation-delay: 0.4s;"></div>
-                    </div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Bouncing Dots</p>
-                </div>
-                
-                <div style="flex: 1; min-width: 200px; max-width: 250px; height: 200px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-                    <div class="progress-bar-container" style="width: 80%; height: 6px; background-color: #f0f0f0; border-radius: 3px; overflow: hidden; margin-bottom: 1rem;">
-                        <div class="progress-bar" style="height: 100%; width: 0; background: linear-gradient(90deg, #4a6de5, #6b8cff); border-radius: 3px; transition: width 1.5s ease-in-out;"></div>
-                    </div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #777;">Progress Bar</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer style="background-color: #f0f0f0; padding: 4rem 5% 2rem; text-align: center;">
-        <p style="margin: 0 0 1rem; color: #777;">Designed with ❤️ by Your Name</p>
-        <p style="margin: 0; color: #999; font-size: 0.9rem;">&copy; 2025 Animation Showcase</p>
-    </footer>
-
-    <!-- Add CSS Animations -->
+    <title>DevOps Engineer Portfolio | 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @keyframes float {
-            0% { transform: translateY(0) rotate(45deg); }
-            50% { transform: translateY(-20px) rotate(45deg); }
-            100% { transform: translateY(0) rotate(45deg); }
+        :root {
+            --primary: #0078d7;
+            --secondary: #00c39a;
+            --dark: #172b4d;
+            --light: #f7faff;
+            --gray: #8996a8;
+            --code-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
-        
-        @keyframes float-reverse {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(20px); }
-            100% { transform: translateY(0); }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        @keyframes rotation {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
         }
-        
-        @keyframes spinner {
-            to { transform: rotate(360deg); }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.8); opacity: 0.5; }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 120, 215, 0.2);
         }
-        
-        @keyframes shine {
-            from { transform: translateX(-100%) rotate(45deg); }
-            to { transform: translateX(100%) rotate(45deg); }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
         }
-        
-        @keyframes particle-animation {
-            0% {
-                transform: translate(0, 0);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(var(--x), var(--y));
-                opacity: 0;
-            }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
         }
-        
-        .spinner {
-            animation: spinner 1s linear infinite;
+
+        section {
+            padding: 80px 0;
         }
-        
-        .pulse-loader {
-            animation: pulse 1.5s ease-in-out infinite;
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
         }
-        
-        .dot {
-            animation: bounce 1.5s ease-in-out infinite;
-        }
-        
-        /* Add this to HTML head if not already present */
-        body:before {
-            content: "";
-            display: block;
-            position: fixed;
-            top: 0;
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
             left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        /* Animation for cloud background */
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.8);
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Custom Styles */
+        #particles-js {
+            position: absolute;
             width: 100%;
             height: 100%;
-            z-index: -10;
-            background: linear-gradient(135deg, #f5f7fa 0%, #ebedee 100%);
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
 
-    <!-- Inline JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate header elements
-            setTimeout(() => {
-                document.getElementById('animated-title').style.opacity = '1';
-                document.getElementById('animated-title').style.transform = 'translateY(0)';
-            }, 300);
+    <!-- Header/Navigation -->
+    <header style="position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255,255,255,0.95); box-shadow: var(--shadow);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+            <a href="#" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--dark);">
+                <span style="color: var(--primary);">DevOps</span>Portfolio
+            </a>
+
+            <nav>
+                <ul style="display: flex; list-style: none;">
+                    <li style="margin-left: 25px;"><a href="#home" style="color: var(--dark); font-weight: 500;">Home</a></li>
+                    <li style="margin-left: 25px;"><a href="#about" style="color: var(--dark); font-weight: 500;">About</a></li>
+                    <li style="margin-left: 25px;"><a href="#skills" style="color: var(--dark); font-weight: 500;">Skills</a></li>
+                    <li style="margin-left: 25px;"><a href="#projects" style="color: var(--dark); font-weight: 500;">Projects</a></li>
+                    <li style="margin-left: 25px;"><a href="#certifications" style="color: var(--dark); font-weight: 500;">AWS Certifications</a></li>
+                    <li style="margin-left: 25px;"><a href="#contact" style="color: var(--dark); font-weight: 500;">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu" style="display: none; cursor: pointer;">
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" style="height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin-top: 80px; position: relative; overflow: hidden;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1; animation: fadeIn 1s ease forwards;">
+                <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 10px;">Hello, I'm a</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2;">DevOps Engineer <br><span style="color: var(--primary);">AWS Specialist</span></h1>
+                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px; max-width: 500px;">
+                    Building and automating CI/CD pipelines, orchestrating containerized applications,
+                    and managing cloud infrastructure with AWS services.
+                </p>
+                <div>
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
             
-            setTimeout(() => {
-                document.getElementById('animated-subtitle').style.opacity = '1';
-                document.getElementById('animated-subtitle').style.transform = 'translateY(0)';
-            }, 600);
+            <div style="flex: 1; text-align: right; position: relative; height: 400px;">
+                <!-- AWS Service Icons Cloud -->
+                <div class="cloud-container" style="position: relative; height: 100%; width: 100%;">
+                    <!-- AWS Icons with Animation -->
+                    <div class="aws-icon" style="position: absolute; top: 20%; left: 20%; animation: float 6s infinite ease-in-out; background: white; width: 80px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b3/6105b01fde11e88dd6d1d6c692e539/AWS_Fundamentals_Course-1_Going_Cloud-Native.jpg?auto=format%2Ccompress&dpr=1" alt="AWS" style="max-width: 50px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 30%; left: 60%; animation: float 7s infinite ease-in-out 1s; background: white; width: 70px; height: 70px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" alt="Docker" style="max-width: 40px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 60%; left: 30%; animation: float 5s infinite ease-in-out 0.5s; background: white; width: 65px; height: 65px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes" style="max-width: 40px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 50%; left: 75%; animation: float 8s infinite ease-in-out 0.2s; background: white; width: 75px; height: 75px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-jenkins-5-1175234.png" alt="Jenkins" style="max-width: 45px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 75%; left: 60%; animation: float 6s infinite ease-in-out 1.5s; background: white; width: 60px; height: 60px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" style="max-width: 35px;">
+                    </div>
+                </div>
+
+                <!-- Background Decoration -->
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; border-radius: 50%; background: rgba(0, 195, 154, 0.1); z-index: -1;"></div>
+                <div style="position: absolute; bottom: -80px; right: 100px; width: 150px; height: 150px; border-radius: 50%; background: rgba(0, 120, 215, 0.1); z-index: -1;"></div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); text-align: center; animation: pulse 2s infinite;">
+            <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">Scroll Down</p>
+            <i class="fas fa-chevron-down" style="color: var(--primary);"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
             
-            setTimeout(() => {
-                document.getElementById('animated-button').style.opacity = '1';
-                document.getElementById('animated-button').style.transform = 'translateY(0)';
-            }, 900);
-            
-            // Animate floating shapes
-            const shapes = document.querySelectorAll('.floating-shape');
-            shapes.forEach((shape, index) => {
-                setTimeout(() => {
-                    shape.style.opacity = '1';
+            <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
+                <div style="flex: 1;">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Professional Photo" style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: var(--shadow);">
+                </div>
+                
+                <div style="flex: 1.5;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">DevOps Engineer | AWS Cloud Specialist</h3>
                     
-                    if (shape.id === 'shape1') {
-                        shape.style.animation = 'float 6s ease-in-out infinite';
-                    } else if (shape.id === 'shape2') {
-                        shape.style.animation = 'float-reverse 7s ease-in-out infinite';
-                    } else if (shape.id === 'shape3') {
-                        shape.style.animation = 'float 8s ease-in-out infinite 1s';
-                    } else if (shape.id === 'shape4') {
-                        shape.style.animation = 'float-reverse 6s ease-in-out infinite 0.5s';
-                    }
-                }, 1200 + (index * 200));
-            });
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        As a fresher DevOps engineer starting my career in 2025, I'm passionate about building reliable, scalable, and efficient infrastructure. I specialize in AWS cloud services, container orchestration, and automation.
+                    </p>
+                    
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        Currently focused on deepening my knowledge of AWS services, implementing CI/CD pipelines, and exploring Infrastructure as Code practices. I believe in the power of automation to solve complex operational challenges.
+                    </p>
+
+                    <div class="terminal" style="background: var(--code-bg); color: white; border-radius: 6px; padding: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; margin-top: 30px; position: relative;">
+                        <div style="display: flex; margin-bottom: 10px;">
+                            <span style="height: 12px; width: 12px; background-color: #ff5f57; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+                            <span style="height: 12px; width: 12px; background-color: #ffbd2e; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+                            <span style="height: 12px; width: 12px; background-color: #28ca41; border-radius: 50%; display: inline-block;"></span>
+                        </div>
+                        <div id="terminal-text" style="height: 80px; overflow: hidden; position: relative;">
+                            <div id="command-output" style="position: absolute; top: 0; left: 0;">
+                                <span style="color: #00c39a;">user@aws-devops</span>:<span style="color: #0078d7;">~</span>$ <span id="typed-text" style="display: inline-block; white-space: nowrap; overflow: hidden; border-right: 0.15em solid orange;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            // Setup intersection observer for fade-in animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
+            <!-- Career Timeline -->
+            <div style="margin-top: 80px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 30px; text-align: center;">My DevOps Journey</h3>
+                
+                <div class="timeline" style="position: relative; max-width: 800px; margin: 0 auto;">
+                    <!-- Timeline Line -->
+                    <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: var(--primary); transform: translateX(-50%);"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="timeline-item" style="display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; right: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; right: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">2023-2024</h4>
+                            <h3 style="margin-bottom: 10px;">Bachelor's Degree in Computer Science</h3>
+                            <p>Completed my degree with a focus on cloud computing and systems administration. Started learning AWS fundamentals and basic scripting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-start; padding-left: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; left: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; left: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">Early 2025</h4>
+                            <h3 style="margin-bottom: 10px;">AWS Certification Journey</h3>
+                            <p>Started my AWS certification path with AWS Cloud Practitioner and Solutions Architect Associate. Built personal projects using EC2, S3, and Lambda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; right: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; right: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">Mid 2025</h4>
+                            <h3 style="margin-bottom: 10px;">CI/CD and Containerization</h3>
+                            <p>Developed skills in Docker, Kubernetes, and Jenkins. Created end-to-end CI/CD pipelines for personal projects. Started contributing to open-source.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-start; padding-left: calc(50% + 30px); position: relative;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--secondary); position: absolute; left: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; left: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--secondary);">Present</h4>
+                            <h3 style="margin-bottom: 10px;">Seeking DevOps Opportunities</h3>
+                            <p>Currently looking for entry-level DevOps positions where I can apply my skills in AWS, containerization, and automation while continuing to learn and grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f7faff;">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div style="margin-top: 50px;">
+                <!-- Cloud Services -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-cloud" style="color: var(--primary); margin-right: 10px;"></i>
+                        Cloud Services
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b3/6105b01fde11e88dd6d1d6c692e539/AWS_Fundamentals_Course-1_Going_Cloud-Native.jpg?auto=format%2Ccompress&dpr=1" alt="AWS" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
                         
-                        // If this is the counters section, start the counter
-                        if (entry.target.querySelector('.counter')) {
-                            startCounters();
-                        }
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google-cloud-platform.svg/1200px-Google-cloud-platform.svg.png" alt="GCP" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Google Cloud</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 60%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-60 1.5s ease-out;"></div>
+                            </div>
+                        </div>
                         
-                        // If this is the progress bar section, start the progress bar
-                        if (entry.target.querySelector('.progress-bar')) {
-                            setTimeout(() => {
-                                document.querySelector('.progress-bar').style.width = '80%';
-                            }, 300);
-                        }
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            document.querySelectorAll('.animation-section').forEach(section => {
-                observer.observe(section);
-            });
-            
-            // Setup animated background
-            createParticles();
-            
-            // Setup the parallax effect
-            setupParallax();
-            
-            // Setup the tilt effect
-            setupTiltEffect();
-            
-            // Setup the flip card
-            setupFlipCard();
-            
-            // Setup the morph card
-            setupMorphCard();
-            
-            // Setup the button ripple effect
-            setupRippleEffect();
-            
-            // Setup the text animation
-            setupTextAnimation();
-            
-            // Setup typing animation
-            setupTypingAnimation();
-            
-            // Smooth scroll
-            setupSmoothScroll();
-        });
-        
-        // Create particles for the background
-        function createParticles() {
-            const container = document.getElementById('animated-bg');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                const size = Math.random() * 6 + 2;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" alt="Azure" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Azure</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 50%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-50 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                // Assign random movement direction
-                const xMovement = (Math.random() - 0.5) * 200;
-                const yMovement = (Math.random() - 0.5) * 200;
-                
-                particle.style.position = 'absolute';
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.backgroundColor = i % 3 === 0 ? '#4a6de5' : i % 3 === 1 ? '#ff6b6b' : '#ffbe3d';
-                particle.style.borderRadius = '50%';
-                particle.style.left = posX + '%';
-                particle.style.top = posY + '%';
-                particle.style.opacity = Math.random() * 0.6 + 0.2;
-                
-                // Set custom properties for the animation
-                particle.style.setProperty('--x', xMovement + 'px');
-                particle.style.setProperty('--y', yMovement + 'px');
-                
-                // Set animation properties
-                const duration = Math.random() * 30 + 15;
-                const delay = Math.random() * 5;
-                particle.style.animation = `float ${duration}s ${delay}s infinite alternate ease-in-out`;
-                
-                container.appendChild(particle);
-            }
-        }
-        
-        // Parallax effect
-        function setupParallax() {
-            const parallaxContainer = document.querySelector('.parallax-container');
-            
-            if (!parallaxContainer) return;
-            
-            parallaxContainer.addEventListener('mousemove', function(e) {
-                const xPos = (e.clientX / this.offsetWidth) - 0.5;
-                const yPos = (e.clientY / this.offsetHeight) - 0.5;
-                
-                const layers = this.querySelectorAll('.parallax-layer');
-                
-                layers.forEach(layer => {
-                    let speed = 1;
-                    if (layer.classList.contains('bg')) speed = 20;
-                    else if (layer.classList.contains('mountains')) speed = 30;
-                    else if (layer.classList.contains('hills')) speed = 40;
+                <!-- Containers & Orchestration -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-cubes" style="color: var(--primary); margin-right: 10px;"></i>
+                        Containers & Orchestration
+                    </h3>
                     
-                    const xMovement = xPos * speed;
-                    const yMovement = yPos * speed;
-                    
-                    layer.style.transform = `translate3d(${xMovement}px, ${yMovement}px, 0)`;
-                });
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" alt="Docker" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Docker</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 90%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-90 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Kubernetes</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 75%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-75 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://static-00.iconduck.com/assets.00/aws-elasticcontainerservice-icon-462x512-ziydidyt.png" alt="ECS" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS ECS/EKS</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                // Also animate the text for a subtle effect
-                const text = this.querySelector('.parallax-layer.text');
-                if (text) {
-                    text.style.transform = `translate(-50%, -50%) translate3d(${xPos * 10}px, ${yPos * 10}px, 0)`;
+                <!-- CI/CD -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-code-branch" style="color: var(--primary); margin-right: 10px;"></i>
+                        CI/CD & Version Control
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-jenkins-5-1175234.png" alt="Jenkins" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Jenkins</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg" alt="GitHub Actions" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">GitHub Actions</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 90%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-90 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Git</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 95%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-95 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://seeklogo.com/images/A/aws-codepipeline-logo-83410F8FE7-seeklogo.com.png" alt="AWS CodePipeline" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS CodePipeline</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure as Code -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-server" style="color: var(--primary); margin-right: 10px;"></i>
+                        Infrastructure as Code
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://static-00.iconduck.com/assets.00/terraform-icon-452x512-ildgg5fd.png" alt="Terraform" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Terraform</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.worldvectorlogo.com/logos/aws-cloudformation.svg" alt="CloudFormation" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">CloudFormation</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://static-00.iconduck.com/assets.00/file-type-ansible-icon-455x512-csyscf2t.png" alt="Ansible" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Ansible</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 70%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-70 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitoring & Observability -->
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-chart-line" style="color: var(--primary); margin-right: 10px;"></i>
+                        Monitoring & Observability
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg" alt="Prometheus" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Prometheus</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 75%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-75 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.worldvectorlogo.com/logos/grafana.svg" alt="Grafana" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Grafana</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://seeklogo.com/images/A/aws-cloudwatch-logo-D691B79F3D-seeklogo.com.png" alt="CloudWatch" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">CloudWatch</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://www.datocms-assets.com/2885/1620155128-brandhcterraformverticalcolor.svg" alt="Elastic Stack" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Elastic Stack</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 65%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-65 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skill Animation for the bars -->
+            <style>
+                @keyframes animate-progress-50 {
+                    0% { width: 0; }
+                    100% { width: 50%; }
                 }
-            });
-        }
-        
-        // Start counters animation
-        function startCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the faster
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const increment = target / speed;
-                
-                function updateCount() {
-                    const count = +counter.innerText;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
+                @keyframes animate-progress-60 {
+                    0% { width: 0; }
+                    100% { width: 60%; }
                 }
-                
-                updateCount();
-            });
-        }
-        
-        // Setup 3D tilt effect
-        function setupTiltEffect() {
-            const cards = document.querySelectorAll('.tilt-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const angleY = (x - centerX) / 8;
-                    const angleX = (centerY - y) / 8;
-                    
-                    this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-                    
-                    // Also update the shine effect
-                    const shine = this.querySelector('.card-shine');
-                    shine.style.opacity = '1';
-                    shine.style.backgroundPosition = `${x / 5 + y / 5}%`;
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-                    
-                    // Hide the shine effect
-                    const shine = this.querySelector('.card-shine');
-                    shine.style.opacity = '0';
-                });
-            });
-        }
-        
-        // Setup flip card
-        function setupFlipCard() {
-            const flipCardContainer = document.querySelector('.flip-card-container');
-            
-            if (!flipCardContainer) return;
-            
-            flipCardContainer.addEventListener('click', function() {
-                const flipCard = this.querySelector('.flip-card');
-                if (flipCard.style.transform === 'rotateY(180deg)') {
-                    flipCard.style.transform = 'rotateY(0)';
-                } else {
-                    flipCard.style.transform = 'rotateY(180deg)';
+                @keyframes animate-progress-65 {
+                    0% { width: 0; }
+                    100% { width: 65%; }
                 }
-            });
-        }
-        
-        // Setup morph card
-        function setupMorphCard() {
-            const morphCards = document.querySelectorAll('.morph-card');
-            
-            morphCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.borderRadius = '50px';
-                    this.style.transform = 'scale(1.05)';
-                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
-                    
-                    // Also update the hover button
-                    const button = this.querySelector('span');
-                    button.style.backgroundColor = '#ffbe3d';
-                    button.style.color = 'white';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.borderRadius = '16px';
-                    this.style.transform = 'scale(1)';
-                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-                    
-                    // Reset the button
-                    const button = this.querySelector('span');
-                    button.style.backgroundColor = '#f0f0f0';
-                    button.style.color = '#777';
-                });
-            });
-        }
-        
-        // Setup button ripple effect
-        function setupRippleEffect() {
-            const buttons = document.querySelectorAll('a[href="#animations"]');
-            
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    const ripple = this.querySelector('.button-ripple');
-                    
-                    // Make sure the ripple is displayed
-                    ripple.style.display = 'block';
-                    
-                    // Calculate the ripple position and size
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height) * 2;
-                    
-                    // Position the ripple
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    
-                    // Animate the ripple
-                    ripple.style.animation = 'none';
-                    setTimeout(() => {
-                        ripple.style.animation = 'ripple 0.8s ease-out';
-                    }, 10);
-                    
-                    // Clean up
-                    setTimeout(() => {
-                        ripple.style.display = 'none';
-                    }, 800);
-                });
-            });
-        }
-        
-        // Setup changing text animation
-        function setupTextAnimation() {
-            const items = document.querySelectorAll('.changing-text .text-item');
-            let currentIndex = 0;
-            
-            function changeText() {
-                // Hide current item
-                items[currentIndex].style.opacity = '0';
-                items[currentIndex].style.transform = 'translateY(-60px)';
-                
-                // Show next item
-                currentIndex = (currentIndex + 1) % items.length;
-                setTimeout(() => {
-                    // Update all items' positions
-                    items.forEach((item, idx) => {
-                        if (idx === currentIndex) {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        } else {
-                            item.style.transform = 'translateY(60px)';
-                        }
-                    });
-                }, 500);
-                
-                // Schedule next change
-                setTimeout(changeText, 3000);
-            }
-            
-            // Start the animation
-            setTimeout(changeText, 3000);
-        }
-        
-        // Setup typing animation
-        function setupTypingAnimation() {
-            const typingText = document.querySelector('.typing-text');
-            const texts = [
-                "Animations can make your website more engaging.",
-                "Users love interactive experiences.",
-                "Creative design improves user retention.",
-                "Let's make the web more beautiful together."
-            ];
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let typingSpeed = 100;
-            
-            function type() {
-                const currentText = texts[textIndex];
-                
-                if (isDeleting) {
-                    // Deleting text
-                    typingText.textContent = currentText.substring(0, charIndex - 1);
-                    charIndex--;
-                    typingSpeed = 50; // Faster when deleting
-                } else {
-                    // Typing text
-                    typingText.textContent = currentText.substring(0, charIndex + 1);
-                    charIndex++;
-                    typingSpeed = 100; // Normal speed when typing
+                @keyframes animate-progress-70 {
+                    0% { width: 0; }
+                    100% { width: 70%; }
                 }
-                
-                // If all chars typed
-                if (!isDeleting && charIndex === currentText.length) {
-                    isDeleting = true;
-                    typingSpeed = 1000; // Wait before deleting
+                @keyframes animate-progress-75 {
+                    0% { width: 0; }
+                    100% { width: 75%; }
                 }
-                
-                // If deleted all chars
-                else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    typingSpeed = 500; // Wait before typing new text
+                @keyframes animate-progress-80 {
+                    0% { width: 0; }
+                    100% { width: 80%; }
                 }
-                
-                setTimeout(type, typingSpeed);
-            }
+                @keyframes animate-progress-85 {
+                    0% { width: 0; }
+                    100% { width: 85%; }
+                }
+                @keyframes animate-progress-90 {
+                    0% { width: 0; }
+                    100% { width: 90%; }
+                }
+                @keyframes animate-progress-95 {
+                    0% { width: 0; }
+                    100% { width: 95%; }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p style="margin-bottom: 40px; max-width: 700px;">These projects demonstrate my practical experience with DevOps tools and AWS services. Each project showcases different aspects of the DevOps lifecycle.</p>
             
-            // Start the typing animation
-            setTimeout(type, 1500);
+            <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+                <!-- Project 1 -->
+                <div class="project-card" style="width: calc(50% - 15px); border-radius: 10px; overflow: hidden; background-color: white; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=var(--shadow);">
+                    <div style="height: 200px; background-image: url('https://images.unsplash.com/photo-1556075798-4825dfaaf498'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">
+                            AWS Serverless Microservices
+                            <span style="font-size: 0.8rem; padding: 4px 8px; background-color: rgba(0, 120, 215, 0.1); color: var(--primary); border-radius: 4px; margin-left: 10px; font-weight: normal;">AWS</span>
+                        </h3>
+                        <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Built a serverless API using AWS Lambda, API Gateway, and DynamoDB. Implemented full CI/CD with AWS CodePipeline and CloudFormation for infrastructure as code.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">AWS Lambda</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">API Gateway</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">DynamoDB</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">CloudFormation</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">CodePipeline</span>
+                        </div>
+                        <a href="#" style="color: var(--primary); display: flex; align-items: center; font-weight: 500;">
+                            View Project
+                            <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" style="width: calc(50% - 15px); border-radius: 10px; overflow: hidden; background-color: white; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=var(--shadow);">
+                    <div style="height: 200px; background-image: url('https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">
+                            Containerized Web App with ECS
+                            <span style="font-size: 0.8rem; padding: 4px 8px; background-color: rgba(0, 195, 154, 0.1); color: var(--secondary); border-radius: 4px; margin-left: 10px; font-weight: normal;">Docker</span>
+                        </h3>
+                        <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Developed a multi-container web application using Docker, deployed to AWS ECS with auto-scaling. Implemented a CI/CD pipeline using GitHub Actions.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Docker</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">AWS ECS</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">GitHub Actions</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">ECR</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Load Balancer</span>
+                        </div>
+                        <a href="#" style="color: var(--primary); display: flex; align-items: center; font-weight: 500;">
+                            View Project
+                            <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" style="width: calc(50% - 15px); border-radius: 10px; overflow: hidden; background-color: white; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=var(--shadow);">
+                    <div style="height: 200px; background-image: url('https://images.unsplash.com/photo-1542903660-eedba2cda473'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">
+                            Terraform AWS Infrastructure
+                            <span style="font-size: 0.8rem; padding: 4px 8px; background-color: rgba(92, 67, 232, 0.1); color: #5c43e8; border-radius: 4px; margin-left: 10px; font-weight: normal;">IaC</span>
+                        </h3>
+                        <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Created reusable Terraform modules for provisioning complete AWS environments. Implemented state management with S3 backend and DynamoDB locking.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Terraform</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">AWS VPC</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">S3</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">DynamoDB</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">EC2</span>
+                        </div>
+                        <a href="#" style="color: var(--primary); display: flex; align-items: center; font-weight: 500;">
+                            View Project
+                            <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" style="width: calc(50% - 15px); border-radius: 10px; overflow: hidden; background-color: white; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=var(--shadow);">
+                    <div style="height: 200px; background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px;">
+                            Kubernetes Monitoring Stack
+                            <span style="font-size: 0.8rem; padding: 4px 8px; background-color: rgba(255, 153, 0, 0.1); color: #ff9900; border-radius: 4px; margin-left: 10px; font-weight: normal;">K8s</span>
+                        </h3>
+                        <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Configured a complete monitoring solution for Kubernetes using Prometheus, Grafana, and Elastic Stack. Automated deployment with Helm charts.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Kubernetes</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Prometheus</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Grafana</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">ELK Stack</span>
+                            <span style="font-size: 0.7rem; padding: 3px 8px; background-color: #f0f0f0; border-radius: 4px;">Helm</span>
+                        </div>
+                        <a href="#" style="color: var(--primary); display: flex; align-items: center; font-weight: 500;">
+                            View Project
+                            <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://github.com/yourgithub" target="_blank" class="btn">See All Projects on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" style="background-color: #f7faff;">
+        <div class="container">
+            <h2 class="section-title">AWS Certifications</h2>
+            <p style="margin-bottom: 40px; max-width: 700px;">I've focused on acquiring AWS certifications to validate my cloud and DevOps skills. Here are the certifications I've earned.</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+                <!-- Certification 1 -->
+                <div class="certification-card" style="width: calc(33.333% - 20px); background: white; border-radius: 10px; padding: 30px; text-align: center; box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" alt="AWS Cloud Practitioner" style="width: 150px; margin-bottom: 20px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">AWS Certified Cloud Practitioner</h3>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 15px;">Credential ID: AWS00123456</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Issued: January 2025</p>
+                    <a href="#" style="color: var(--primary); display: inline-flex; align-items: center; margin-top: 15px; font-weight: 500;">
+                        View Certificate
+                        <i class="fas fa-external-link-alt" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="certification-card" style="width: calc(33.333% - 20px); background: white; border-radius: 10px; padding: 30px; text-align: center; box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Solutions-Architect-Associate_badge.3419559c4379c3a73a0c7adbe675721d76fa8fb7.png" alt="AWS Solutions Architect" style="width: 150px; margin-bottom: 20px;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px;">AWS Solutions Architect Associate</h3>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 15px;">Credential ID: AWS00123457</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Issued: March 2025</p>
+                    <a href="#" style="color: var(--primary); display: inline-flex; align-items: center; margin-top: 15px; font-weight: 500;">
+                        View Certificate
+                        <i class="fas fa-external-link-alt" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="certification-card" style="width: calc<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio | 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0078d7;
+            --secondary: #00c39a;
+            --dark: #172b4d;
+            --light: #f7faff;
+            --gray: #8996a8;
+            --code-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 120, 215, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        /* Animation for cloud background */
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.8);
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Custom Styles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header/Navigation -->
+    <header style="position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255,255,255,0.95); box-shadow: var(--shadow);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+            <a href="#" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--dark);">
+                <span style="color: var(--primary);">DevOps</span>Portfolio
+            </a>
+
+            <nav>
+                <ul style="display: flex; list-style: none;">
+                    <li style="margin-left: 25px;"><a href="#home" style="color: var(--dark); font-weight: 500;">Home</a></li>
+                    <li style="margin-left: 25px;"><a href="#about" style="color: var(--dark); font-weight: 500;">About</a></li>
+                    <li style="margin-left: 25px;"><a href="#skills" style="color: var(--dark); font-weight: 500;">Skills</a></li>
+                    <li style="margin-left: 25px;"><a href="#projects" style="color: var(--dark); font-weight: 500;">Projects</a></li>
+                    <li style="margin-left: 25px;"><a href="#certifications" style="color: var(--dark); font-weight: 500;">AWS Certifications</a></li>
+                    <li style="margin-left: 25px;"><a href="#contact" style="color: var(--dark); font-weight: 500;">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu" style="display: none; cursor: pointer;">
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" style="height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin-top: 80px; position: relative; overflow: hidden;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1; animation: fadeIn 1s ease forwards;">
+                <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 10px;">Hello, I'm a</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2;">DevOps Engineer <br><span style="color: var(--primary);">AWS Specialist</span></h1>
+                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px; max-width: 500px;">
+                    Building and automating CI/CD pipelines, orchestrating containerized applications,
+                    and managing cloud infrastructure with AWS services.
+                </p>
+                <div>
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div style="flex: 1; text-align: right; position: relative; height: 400px;">
+                <!-- AWS Service Icons Cloud -->
+                <div class="cloud-container" style="position: relative; height: 100%; width: 100%;">
+                    <!-- AWS Icons with Animation -->
+                    <div class="aws-icon" style="position: absolute; top: 20%; left: 20%; animation: float 6s infinite ease-in-out; background: white; width: 80px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b3/6105b01fde11e88dd6d1d6c692e539/AWS_Fundamentals_Course-1_Going_Cloud-Native.jpg?auto=format%2Ccompress&dpr=1" alt="AWS" style="max-width: 50px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 30%; left: 60%; animation: float 7s infinite ease-in-out 1s; background: white; width: 70px; height: 70px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" alt="Docker" style="max-width: 40px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 60%; left: 30%; animation: float 5s infinite ease-in-out 0.5s; background: white; width: 65px; height: 65px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes" style="max-width: 40px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 50%; left: 75%; animation: float 8s infinite ease-in-out 0.2s; background: white; width: 75px; height: 75px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-jenkins-5-1175234.png" alt="Jenkins" style="max-width: 45px;">
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 75%; left: 60%; animation: float 6s infinite ease-in-out 1.5s; background: white; width: 60px; height: 60px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" style="max-width: 35px;">
+                    </div>
+                </div>
+
+                <!-- Background Decoration -->
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; border-radius: 50%; background: rgba(0, 195, 154, 0.1); z-index: -1;"></div>
+                <div style="position: absolute; bottom: -80px; right: 100px; width: 150px; height: 150px; border-radius: 50%; background: rgba(0, 120, 215, 0.1); z-index: -1;"></div>
+            </div>
+        </div>
         
-        // Setup smooth scroll
-        function setupSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+        <!-- Scroll Down Indicator -->
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); text-align: center; animation: pulse 2s infinite;">
+            <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">Scroll Down</p>
+            <i class="fas fa-chevron-down" style="color: var(--primary);"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
+                <div style="flex: 1;">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Professional Photo" style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: var(--shadow);">
+                </div>
+                
+                <div style="flex: 1.5;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">DevOps Engineer | AWS Cloud Specialist</h3>
                     
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        }
-    </script>
-</body>
-</html>
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        As a fresher DevOps engineer starting my career in 2025, I'm passionate about building reliable, scalable, and efficient infrastructure. I specialize in AWS cloud services, container orchestration, and automation.
+                    </p>
+                    
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        Currently focused on deepening my knowledge of AWS services, implementing CI/CD pipelines, and exploring Infrastructure as Code practices. I believe in the power of automation to solve complex operational challenges.
+                    </p>
+
+                    <div class="terminal" style="background: var(--code-bg); color: white; border-radius: 6px; padding: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; margin-top: 30px; position: relative;">
+                        <div style="display: flex; margin-bottom: 10px;">
+                            <span style="height: 12px; width: 12px; background-color: #ff5f57; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+                            <span style="height: 12px; width: 12px; background-color: #ffbd2e; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+                            <span style="height: 12px; width: 12px; background-color: #28ca41; border-radius: 50%; display: inline-block;"></span>
+                        </div>
+                        <div id="terminal-text" style="height: 80px; overflow: hidden; position: relative;">
+                            <div id="command-output" style="position: absolute; top: 0; left: 0;">
+                                <span style="color: #00c39a;">user@aws-devops</span>:<span style="color: #0078d7;">~</span>$ <span id="typed-text" style="display: inline-block; white-space: nowrap; overflow: hidden; border-right: 0.15em solid orange;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Career Timeline -->
+            <div style="margin-top: 80px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 30px; text-align: center;">My DevOps Journey</h3>
+                
+                <div class="timeline" style="position: relative; max-width: 800px; margin: 0 auto;">
+                    <!-- Timeline Line -->
+                    <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: var(--primary); transform: translateX(-50%);"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="timeline-item" style="display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; right: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; right: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">2023-2024</h4>
+                            <h3 style="margin-bottom: 10px;">Bachelor's Degree in Computer Science</h3>
+                            <p>Completed my degree with a focus on cloud computing and systems administration. Started learning AWS fundamentals and basic scripting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-start; padding-left: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; left: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; left: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">Early 2025</h4>
+                            <h3 style="margin-bottom: 10px;">AWS Certification Journey</h3>
+                            <p>Started my AWS certification path with AWS Cloud Practitioner and Solutions Architect Associate. Built personal projects using EC2, S3, and Lambda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; right: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; right: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">Mid 2025</h4>
+                            <h3 style="margin-bottom: 10px;">CI/CD and Containerization</h3>
+                            <p>Developed skills in Docker, Kubernetes, and Jenkins. Created end-to-end CI/CD pipelines for personal projects. Started contributing to open-source.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-start; padding-left: calc(50% + 30px); position: relative;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--secondary); position: absolute; left: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; left: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--secondary);">Present</h4>
+                            <h3 style="margin-bottom: 10px;">Seeking DevOps Opportunities</h3>
+                            <p>Currently looking for entry-level DevOps positions where I can apply my skills in AWS, containerization, and automation while continuing to learn and grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f7faff;">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div style="margin-top: 50px;">
+                <!-- Cloud Services -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-cloud" style="color: var(--primary); margin-right: 10px;"></i>
+                        Cloud Services
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b3/6105b01fde11e88dd6d1d6c692e539/AWS_Fundamentals_Course-1_Going_Cloud-Native.jpg?auto=format%2Ccompress&dpr=1" alt="AWS" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google-cloud-platform.svg/1200px-Google-cloud-platform.svg.png" alt="GCP" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Google Cloud</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 60%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-60 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" alt="Azure" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Azure</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 50%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-50 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Containers & Orchestration -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-cubes" style="color: var(--primary); margin-right: 10px;"></i>
+                        Containers & Orchestration
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" alt="Docker" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Docker</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 90%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-90 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Kubernetes</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 75%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-75 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://static-00.iconduck.com/assets.00/aws-elasticcontainerservice-icon-462x512-ziydidyt.png" alt="ECS" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS ECS/EKS</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CI/CD -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-code-branch" style="color: var(--primary); margin-right: 10px;"></i>
+                        CI/CD & Version Control
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-jenkins-5-1175234.png" alt="Jenkins" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Jenkins</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg" alt="GitHub Actions" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">GitHub Actions</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 90%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-90 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Git</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 95%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-95 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(25% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://seeklogo.com/images/A/aws-codepipeline-logo-83410F8FE7-seeklogo.com.png" alt="AWS CodePipeline" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS CodePipeline</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure as Code -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-server" style="color: var(--primary); margin-right: 10px;"></i>
+                        Infrastructure as Code
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://static-00.iconduck.com/assets.00/terraform-icon-452x512-ildgg5fd.png" alt="Terraform" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Terraform</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://cdn.worldvectorlogo.com/logos/aws-cloudformation.svg" alt="CloudFormation" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">CloudFormation</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 80%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-80 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <img src="https://static-00.iconduck.com/assets.00/file-type-ansible-icon-455x512-csyscf2t.png" alt="Ansible" style="width: 60px; margin-bottom: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Ansible</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 70%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-70 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitoring & Observability -->
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-chart-line" style="color: var(--primary); margin-right: 10px;"></i>
+                        Monitoring & Observability
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style
