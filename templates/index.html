@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio | 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0078d7;
+            --secondary: #00c39a;
+            --dark: #172b4d;
+            --light: #f7faff;
+            --gray: #8996a8;
+            --code-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 120, 215, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        /* Animation for cloud background */
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.8);
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Skill bar animations */
+        @keyframes animate-progress-50 {
+            0% { width: 0; }
+            100% { width: 50%; }
+        }
+        @keyframes animate-progress-60 {
+            0% { width: 0; }
+            100% { width: 60%; }
+        }
+        @keyframes animate-progress-65 {
+            0% { width: 0; }
+            100% { width: 65%; }
+        }
+        @keyframes animate-progress-70 {
+            0% { width: 0; }
+            100% { width: 70%; }
+        }
+        @keyframes animate-progress-75 {
+            0% { width: 0; }
+            100% { width: 75%; }
+        }
+        @keyframes animate-progress-80 {
+            0% { width: 0; }
+            100% { width: 80%; }
+        }
+        @keyframes animate-progress-85 {
+            0% { width: 0; }
+            100% { width: 85%; }
+        }
+        @keyframes animate-progress-90 {
+            0% { width: 0; }
+            100% { width: 90%; }
+        }
+        @keyframes animate-progress-95 {
+            0% { width: 0; }
+            100% { width: 95%; }
+        }
+
+        /* Particles background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header/Navigation -->
+    <header style="position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255,255,255,0.95); box-shadow: var(--shadow);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+            <a href="#" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--dark);">
+                <span style="color: var(--primary);">DevOps</span>Portfolio
+            </a>
+
+            <nav>
+                <ul style="display: flex; list-style: none;">
+                    <li style="margin-left: 25px;"><a href="#home" style="color: var(--dark); font-weight: 500;">Home</a></li>
+                    <li style="margin-left: 25px;"><a href="#about" style="color: var(--dark); font-weight: 500;">About</a></li>
+                    <li style="margin-left: 25px;"><a href="#skills" style="color: var(--dark); font-weight: 500;">Skills</a></li>
+                    <li style="margin-left: 25px;"><a href="#projects" style="color: var(--dark); font-weight: 500;">Projects</a></li>
+                    <li style="margin-left: 25px;"><a href="#certifications" style="color: var(--dark); font-weight: 500;">AWS Certifications</a></li>
+                    <li style="margin-left: 25px;"><a href="#contact" style="color: var(--dark); font-weight: 500;">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu" style="display: none; cursor: pointer;">
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" style="height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin-top: 80px; position: relative; overflow: hidden;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1; animation: fadeIn 1s ease forwards;">
+                <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 10px;">Hello, I'm a</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2;">DevOps Engineer <br><span style="color: var(--primary);">AWS Specialist</span></h1>
+                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px; max-width: 500px;">
+                    Building and automating CI/CD pipelines, orchestrating containerized applications,
+                    and managing cloud infrastructure with AWS services.
+                </p>
+                <div>
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div style="flex: 1; text-align: right; position: relative; height: 400px;">
+                <!-- AWS Service Icons Cloud -->
+                <div class="cloud-container" style="position: relative; height: 100%; width: 100%;">
+                    <!-- AWS Icons with Animation -->
+                    <div class="aws-icon" style="position: absolute; top: 20%; left: 20%; animation: float 6s infinite ease-in-out; background: white; width: 80px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <!-- AWS Logo - SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" viewBox="0 0 640 512">
+                            <path fill="#FF9900" d="M180.41 203.01c-.72 22.65 10.6 32.68 10.88 39.05a8.164 8.164 0 0 1-4.1 6.27l-12.8 8.96c-10.88 7.62-22.08 11.77-33.28 11.77-15.57 0-30.54-8.63-34.64-22.72-3.32-11.8 0-23.94 9.87-32.69 9.53-8.62 15.13-10.47 35.88-20.07 20.74-9.6 30.82-19.33 30.82-32.68 0-14.52-11.76-34.26-44.85-34.26-18.71 0-39.04 12.94-50.12 23.76a7.957 7.957 0 0 1-6.88 1.5l-39.06-11.3c-2.61-.76-5.48.22-7.12 2.45-1.65 2.22-1.65 5.22 0 7.44 3.94 5.3 15.4 20.3 37.47 34.03 20.3 12.72 59.65 25.76 107.1 22.47 20.5-1.71 52.67-16.12 52.67-49.38 0-29.06-22.18-38.43-44.63-38.44-27.21.01-34.64 10.49-34.64 10.49zm179.67 64.43c-4.54-1.37-11.19.95-11.19.95v74.14c0 8.05-6.1 9.8-13.92 9.8-7.82 0-11.52-1.85-11.52-7.4V220.06c0-6.11 1.2-12.92 3.48-17.92-12.92 0-32.7 9.29-32.7 26.26V369c0 17.12 9.29 23.67 33.28 23.67 12.81 0 27.05-3.18 27.05-3.18 9.67 0 18.94-3.79 18.94-12.01V273.1c0-2.96-1.13-5.02-3.87-5.73l-9.55-2.92zm85.11 5.93c-15.87-25.36-32.11-35.7-54.3-35.7s-27.37 10.34-27.37 10.34v91.2s11.76 18.09 27.37 18.09c15.6 0 32.11-10.34 47.6-27.37 15.48-17.03 25.22-32.92 25.22-32.92s-6.15-14.33-18.52-23.63zm42.25 70.35c-15.76-20.88-33.33-40.19-33.33-65.96 0-20.71 15.03-28.25 15.03-28.25V239.7s-10.47-3.93-20.71-3.93c-10.24 0-22.47 8.8-29.41 19.77-6.94 10.97-12.05 19.77-12.05 30.25 0 10.48 3.33 20.12 10.24 30.04 6.91 9.92 13.5 18.98 19.77 27.55 6.27 8.57 8.57 16.82 8.57 24.29 0 7.47-10.24 17.71-10.24 17.71v10.11s11.4 2.5 21.87 2.5c10.47 0 22.24-7.73 28.51-15.87 6.27-8.13 13.93-15.57 18.41-22.5 4.48-6.93 7.14-13.93 7.14-19.4-.01-5.47-2.35-10.71-9.95-20.94zM325.6 52.16c0 27.88-13.94 49.93-31.27 49.93s-31.27-22.05-31.27-49.93c0-27.88 13.94-49.93 31.27-49.93S325.6 24.28 325.6 52.16zm-61.47 0c0 27.88-13.94 49.93-31.27 49.93S201.6 80.04 201.6 52.16c0-27.88 13.94-49.93 31.27-49.93s31.27 22.05 31.27 49.93z"/>
+                        </svg>
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 30%; left: 60%; animation: float 7s infinite ease-in-out 1s; background: white; width: 70px; height: 70px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <!-- Docker Logo - SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 640 512">
+                            <path fill="#2496ED" d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/>
+                        </svg>
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 60%; left: 30%; animation: float 5s infinite ease-in-out 0.5s; background: white; width: 65px; height: 65px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <!-- Kubernetes Logo - SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 32 32">
+                            <path fill="#326CE5" d="M15.9.476a2.14 2.14 0 0 0-.823.218L5.04 4.924a2.14 2.14 0 0 0-1.188 1.584l-1.437 10.62a2.14 2.14 0 0 0 .615 1.761L9.74 26.42a2.14 2.14 0 0 0 1.686.616l10.619-1.438a2.14 2.14 0 0 0 1.584-1.187l4.232-10.039a2.14 2.14 0 0 0-.219-2.09l-7.6-9.47a2.14 2.14 0 0 0-1.682-.817c-.102-.008-.204-.012-.306-.01zM16.1 4.528c.284 0 .662.072 1.005.254.343.183.611.461.644.485.01.008 2.339 2.914 5.18 6.458l5.18 6.444c.23.29.274.704.107 1.04l-.005.012-2.13 5.05a1.07 1.07 0 0 1-.633.599l-5.35.726a1.07 1.07 0 0 1-.843-.308l-3.643-3.643c-.128-.131-.329-.204-.528-.204h-4.01a1.07 1.07 0 0 1-.845-.31l-3.641-3.64a1.07 1.07 0 0 1-.308-.844l.726-5.35a1.07 1.07 0 0 1 .598-.633l5.05-2.13c.342-.148.745-.102 1.043.107 2.227 1.4 4.234 3.086 6.45 5.18 3.528-2.815 5.43-4.238 5.43-4.238.032-.025.076-.068.182-.154.29-.236.742-.433 1.152-.434z"/>
+                        </svg>
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 50%; left: 75%; animation: float 8s infinite ease-in-out 0.2s; background: white; width: 75px; height: 75px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <!-- Jenkins Logo - SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" viewBox="0 0 256 256">
+                            <path fill="#D33833" d="M219.822 48.887c.68-14.415-10.156-22.577-10.156-22.577s3.768 1.558 5.924 9.306c1.884 7.388-2.056 20.698-2.056 20.698s-1.445 7.895-7.112 12.283c-5.784 4.766-10.17 8.421-12.097 18.083c-2.05 10.731 2.205 19.483 2.205 19.483s-5.363-9.707-2.486-20.028c2.636-9.425 13.895-15.505 13.895-15.505s7.402-5.75 8.037-13.059c.544-6.238-.446-13.227-1.281-15.65c-.223.551-1.05.749-1.05.749s.642-2.863.363-3.905c-.717-2.773-3.684-2.45-3.684-2.45s1.842-1.15 3.02-1.1c2.021.1 5.47 5.105 3.743 16.605c-2.774 18.445-19.122 18.918-24.678 35.204c-5.279 15.489 2.39 33.21 2.39 33.21s-1.992-7.321-1.123-11.648c0 0 .446-3.1 1.884-5.87c3.171-6.096 10.156-11.143 10.156-11.143s1.909-1.417 3.642-3.219c4.305-4.467 11.936-12.977 10.332-29.151c-1.714-17.114-10.139-30.227-10.139-30.227s3.989 5.596 6.271 13.958z"/>
+                            <path fill="#EF3D3A" d="M122.893 212.672c3.401 1.86 4.971 3.128 7.051 3.17c5.045.039 10.501-6.453 10.561-6.562c.183-.336 1.922-3.301 4.041-6.67c2.27-3.618 5.187-8.26 8.389-13.354c9.049-14.387 20.567-32.661 29.348-46.45c2.2-3.45 4.45-7.057 6.231-9.952c.199-.323.371-.639.566-.952c5.76-9.291 13.903-22.397 19.469-36.308c1.396-3.41 2.602-6.877 3.556-10.414c.97-3.603 1.624-7.306 1.662-11.027c.191-17.067-10.912-33.091-10.912-33.091s5.382 20.72-9.87 45.189c-.16.239-.41.527-.59.795c-14.24 21.425-39.574 61.949-50.511 79.523c-.138.22-.307.486-.453.702c-3.024 4.559-12.328 18.745-12.328 18.745s-4.812 6.579-7.02 9.308c-1.387 1.72-3.773 4.245-4.895 5.3c-.293.275-2.217 2.287-5.005 4.018c-3.14 1.95-7.455 3.727-11.1 2.299c-4.468-1.753-6.108-6.147-6.135-10.618c-.008-1.854.387-3.581.656-5.177c.215-1.284.403-2.4.387-3.212l-.03-1.925c-.016-.875-.03-1.753-.041-2.633c-.136-9.209-.291-19.596 7.657-19.264c1.857.078 7.705.434 14.545.845c6.839.409 14.644.896 19.944 1.293c.992.074 1.829.14 2.465.194c.863.07 1.3.109 1.3.109s-1.21.043-3.402.09c-.65.016-1.404.031-2.242.047c-5.139.093-13.301.175-22.585.134c-4.641-.021-9.571-.075-14.424-.167c-4.783-.09-9.51-.219-13.797-.382c-.886-.035-1.677-.198-2.401-.455c-8.385-2.957-10.274-11.311-10.169-19.177c.043-3.333.749-6.602 1.134-9.532c.195-1.463.374-2.815.467-4.017c.174-2.071.328-4.872-1.096-6.876c-2.11-2.975-5.623-2.219-8.005-1.726c-1.187.248-2.092.43-2.53.422c-8.483-.325-15.676-7.812-15.676-16.7c0-1.054.345-2.749.734-4.651c.67-3.231 1.483-7.255.564-9.476c-1.267-3.116-4.615-5.586-7.85-7.994c-1.756-1.307-3.584-2.663-5.055-4.107c-2.48-2.433-4.037-5.387-5.313-8.903c-1.298-3.6-2.359-7.693-4.205-11.556c-.202-.421-.418-.831-.645-1.231c-3.287-5.791-8.601-8.325-14.314-10.106c-.79-.245-1.588-.479-2.386-.709c-5.386-1.548-11.478-3.296-14.847-7.75c-1.534-2.025-2.462-4.7-3.372-7.3c-1.314-3.749-2.628-7.558-6.084-9.814c-4.393-2.894-8.352-4.411-13.129-5.26c-1.683-.313-3.504-.588-5.393-.876c-4.216-.642-8.586-1.306-12.762-2.985c-4.904-1.983-7.765-5.654-7.728-9.826c.047-7.168 6.809-13.349 14.19-13.349c.551 0 1.125.033 1.707.098c4.187.494 8.532 1.46 12.698 2.392c4.02.905 8.169 1.829 12.168 2.471c6.555 1.058 12.146 1.711 16.879 1.942c2.07.104 3.852.141 5.328.112c1.06-.019 1.87-.068 2.432-.108c.551-.04 1.115-.062 1.689-.062c8.72 0 15.998 4.715 19.753 12.036c1.172 2.189 2.132 4.505 3.064 6.745c1.018 2.445 2.065 4.969 3.385 7.265c.87 1.5 1.836 2.917 2.907 4.206c1.772 2.18 3.961 3.898 6.257 5.37c2.14 1.336 4.4 2.4 6.592 3.431c1.981.934 4.023 1.894 5.969 3.102c2.333 1.371 5.483 3.224 6.085 8.531c.541 4.753-1.897 10.036-4.593 15.808c-.427.913-.858 1.832-1.284 2.754c-3.84 8.331-8.194 17.759-1.058 24.423c4.577 4.304 10.76 5.957 14.988 6.892c.759.17 1.548.353 2.333.542c3.677.89 7.5 1.955 10.573 3.95c2.184 1.397 3.548 3.06 4.211 5.193c.549 1.773.551 3.696.552 5.676v.723c-.016 1.04.052 2.064.121 3.088c.355 5.154.799 11.558-7.698 15.766c-6.17 3.094-13.066 2.965-20.424 2.828c-.964-.019-1.932-.038-2.901-.05c-1.533-.021-3.009.183-4.442.381c-.371.051-.733.101-1.089.147c-9.36 1.171-14.261-4.873-16.242-12.09c-1.559-5.669-.675-11.98.182-18.104c.068-.484.137-.969.203-1.453c.988-7.166 2.109-15.246-2.613-18.586c-4.473-3.161-10.772-2.1-16.195-1.202c-2.92.482-5.686.94-7.835.435c-4.042-.952-6.096-4.534-8.051-7.932c-.411-.719-.837-1.458-1.287-2.181c-1.777-2.858-4.659-5.173-7.815-7.349c-.451-.316-.912-.622-1.375-.931c-4.745-3.158-9.004-6.235-9.942-10.908c-1.248-6.137 2.596-12.722 5.77-16.547c3.95-4.754 8.691-7.847 12.08-10.139c1.843-1.249 3.584-2.429 5.106-3.6c2.735-2.096 5.119-4.286 7.039-6.939c1.89-2.55 3.25-5.565 4.577-8.505c1.224-2.77 2.49-5.63 4.227-8.237c1.919-2.891 5.183-6.406 10.42-7.832c4.408-1.193 9.163-.9 14.127-.193c.586.084 1.173.168 1.759.251c8.186 1.137 14.845 2.071 20.764 1.736c7.713-.446 13.627-2.75 19.863-7.211c.916-.647 1.853-1.345 2.879-2.095c9.118-6.67 19.286-15.833 36.293-13.292c8.814 1.323 14.511 5.031 19.93 8.55c1.265.819 2.53 1.642 3.839 2.444c1.716 1.04 3.505 2.06 5.244 3.048c3.994 2.27 8.13 4.613 11.742 7.51c5.846 4.669 11.22 11.605 13.793 18.442c1.538 4.084 1.985 8.122 2.25 12.24c.076 1.178.153 2.355.253 3.525c.459 5.342 1.1 8.832 2.883 12.303c1.132 2.21 2.692 4.232 4.618 6.145c3.415 3.4 7.657 6.145 11.885 8.521c.996.557 1.986 1.117 2.967 1.673c4.543 2.641 9.25 5.387 13.422 8.927c.578.488 1.142 1.004 1.707 1.534c4.915 4.635 10.091 10.482 12.275 19.977c1.13 4.89.857 10.181-1.112 15.751c-.642 1.801-1.426 3.554-2.125 5.167c-.212.489-.414.96-.607 1.412c-.81 1.884-1.67 3.896-2.585 5.939c-3.136 6.95-7.173 14.95-7.111 21.764c.037 4.705 2.003 8.486 6.325 12.207a24.846 24.846 0 0 0 5.772 3.777c2.043 1.02 4.143 1.863 6.194 2.683c1.986.791 4.042 1.613 6.009 2.507c3.955 1.797 7.154 4.038 9.766 6.702c3.322 3.324 5.989 7.452 8.769 11.772c1.347 2.106 2.738 4.279 4.234 6.359c2.84 3.874 6.05 7.203 9.582 9.89c2.384 1.827 5.275 3.645 8.826 5.321"/>
+                        </svg>
+                    </div>
+                    <div class="aws-icon" style="position: absolute; top: 75%; left: 60%; animation: float 6s infinite ease-in-out 1.5s; background: white; width: 60px; height: 60px; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow);">
+                        <!-- Git Logo - SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 512 512">
+                            <path fill="#F05032" d="M503.5 204.6L298.4 8c-14.7-15.6-39-15.6-54.7 0L203.5 50c-2.8 2.8-6.4 4-10.2 4-3.7 0-7.3-1.2-10.2-4-5.8-5.6-5.8-14.6 0-20.3L224.6 8c-14.7-15.6-39-15.6-54.7 0L9.5 168c-14.7 15.6-14.7 40.9 0 56.6l62.2 59.3c-1.5 6.5-2.4 13.2-2.4 20.2 0 49.1 39.9 89 89 89 11.3 0 22.1-2.1 32-5.9v114.3c0 5.8 4.7 10.6 10.6 10.6h58.7c5.8 0 10.6-4.7 10.6-10.6v-68.7h134.8v68.7c0 5.8 4.7 10.6 10.6 10.6h58.7c5.8 0 10.6-4.7 10.6-10.6V313.1c29-18.4 48.3-50.9 48.3-88.1 0-9.1-1.2-17.9-3.4-26.3L503.5 153c14.7-15.8 14.7-41 0-56.6zM158.4 289c0 5.8-4.7 10.6-10.6 10.6h-5.1c-5.8 0-10.6-4.7-10.6-10.6v-5.1c0-5.8 4.7-10.6 10.6-10.6h5.1c5.8 0 10.6 4.7 10.6 10.6v5.1zm219.8-15.7h-5.1c-5.8 0-10.6-4.7-10.6-10.6v-5.1c0-5.8 4.7-10.6 10.6-10.6h5.1c5.8 0 10.6 4.7 10.6 10.6v5.1c-.1 5.9-4.8 10.6-10.6 10.6zm91.7-15.7c0 21.8-7.8 41.7-20.8 57.2l-43.4-41.3v-9.5c0-17.5-14.2-31.7-31.7-31.7h-5.1c-17.5 0-31.7 14.2-31.7 31.7v5.1c0 17.5 14.2 31.7 31.7 31.7h5.1c4 0 7.8-.8 11.3-2.1l47.1 44.8c-14.9 10-32.9 15.9-52.2 15.9-51.3 0-93-41.6-93-93s41.6-93 93-93c51.1 0 92.7 41.4 92.7 92.5V244z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Background Decoration -->
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; border-radius: 50%; background: rgba(0, 195, 154, 0.1); z-index: -1;"></div>
+                <div style="position: absolute; bottom: -80px; right: 100px; width: 150px; height: 150px; border-radius: 50%; background: rgba(0, 120, 215, 0.1); z-index: -1;"></div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); text-align: center; animation: pulse 2s infinite;">
+            <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">Scroll Down</p>
+            <i class="fas fa-chevron-down" style="color: var(--primary);"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
+                <div style="flex: 1;">
+                    <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a" alt="Professional Photo" style="width: 100%; max-width: 400px; border-radius: 10px; box-shadow: var(--shadow);" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400?text=DevOps+Engineer';">
+                </div>
+                
+                <div style="flex: 1.5;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">DevOps Engineer | AWS Cloud Specialist</h3>
+                    
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        As a fresher DevOps engineer starting my career in 2025, I'm passionate about building reliable, scalable, and efficient infrastructure. I specialize in AWS cloud services, container orchestration, and automation.
+                    </p>
+                    
+                    <p style="margin-bottom: 20px; line-height: 1.8;">
+                        Currently focused on deepening my knowledge of AWS services, implementing CI/CD pipelines, and exploring Infrastructure as Code practices. I believe in the power of automation to solve complex operational challenges.
+                    </p>
+
+                    <div class="terminal" style="background: var(--code-bg); color: white; border-radius: 6px; padding: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; margin-top: 30px; position: relative;">
+                        <div style="display: flex; margin-bottom: 10px;">
+                            <span style="height: 12px; width: 12px; background-color: #ff5f57; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+                            <span style="height: 12px; width: 12px; background-color: #ffbd2e; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+                            <span style="height: 12px; width: 12px; background-color: #28ca41; border-radius: 50%; display: inline-block;"></span>
+                        </div>
+                        <div id="terminal-text" style="height: 80px; overflow: hidden; position: relative;">
+                            <div id="command-output" style="position: absolute; top: 0; left: 0;">
+                                <span style="color: #00c39a;">user@aws-devops</span>:<span style="color: #0078d7;">~</span>$ <span id="typed-text" style="display: inline-block; white-space: nowrap; overflow: hidden; border-right: 0.15em solid orange;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Career Timeline -->
+            <div style="margin-top: 80px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 30px; text-align: center;">My DevOps Journey</h3>
+                
+                <div class="timeline" style="position: relative; max-width: 800px; margin: 0 auto;">
+                    <!-- Timeline Line -->
+                    <div style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: var(--primary); transform: translateX(-50%);"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="timeline-item" style="display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; right: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; right: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">2023-2024</h4>
+                            <h3 style="margin-bottom: 10px;">Bachelor's Degree in Computer Science</h3>
+                            <p>Completed my degree with a focus on cloud computing and systems administration. Started learning AWS fundamentals and basic scripting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-start; padding-left: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; left: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; left: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">Early 2025</h4>
+                            <h3 style="margin-bottom: 10px;">AWS Certification Journey</h3>
+                            <p>Started my AWS certification path with AWS Cloud Practitioner and Solutions Architect Associate. Built personal projects using EC2, S3, and Lambda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 50px;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--primary); position: absolute; right: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; right: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--primary);">Mid 2025</h4>
+                            <h3 style="margin-bottom: 10px;">CI/CD and Containerization</h3>
+                            <p>Developed skills in Docker, Kubernetes, and Jenkins. Created end-to-end CI/CD pipelines for personal projects. Started contributing to open-source.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" style="display: flex; justify-content: flex-start; padding-left: calc(50% + 30px); position: relative;">
+                        <div style="width: 16px; height: 16px; border-radius: 50%; background: var(--secondary); position: absolute; left: calc(50% - 8px); top: 20px;"></div>
+                        <div style="background: white; padding: 20px; border-radius: 6px; box-shadow: var(--shadow); max-width: 350px; position: relative;">
+                            <div style="position: absolute; left: -10px; top: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 10px solid white;"></div>
+                            <h4 style="margin-bottom: 10px; color: var(--secondary);">Present</h4>
+                            <h3 style="margin-bottom: 10px;">Seeking DevOps Opportunities</h3>
+                            <p>Currently looking for entry-level DevOps positions where I can apply my skills in AWS, containerization, and automation while continuing to learn and grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f7faff;">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div style="margin-top: 50px;">
+                <!-- Cloud Services -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-cloud" style="color: var(--primary); margin-right: 10px;"></i>
+                        Cloud Services
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <!-- AWS Logo SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" style="margin-bottom: 15px;" viewBox="0 0 640 512">
+                                <path fill="#FF9900" d="M180.41 203.01c-.72 22.65 10.6 32.68 10.88 39.05a8.164 8.164 0 0 1-4.1 6.27l-12.8 8.96c-10.88 7.62-22.08 11.77-33.28 11.77-15.57 0-30.54-8.63-34.64-22.72-3.32-11.8 0-23.94 9.87-32.69 9.53-8.62 15.13-10.47 35.88-20.07 20.74-9.6 30.82-19.33 30.82-32.68 0-14.52-11.76-34.26-44.85-34.26-18.71 0-39.04 12.94-50.12 23.76a7.957 7.957 0 0 1-6.88 1.5l-39.06-11.3c-2.61-.76-5.48.22-7.12 2.45-1.65 2.22-1.65 5.22 0 7.44 3.94 5.3 15.4 20.3 37.47 34.03 20.3 12.72 59.65 25.76 107.1 22.47 20.5-1.71 52.67-16.12 52.67-49.38 0-29.06-22.18-38.43-44.63-38.44-27.21.01-34.64 10.49-34.64 10.49zm179.67 64.43c-4.54-1.37-11.19.95-11.19.95v74.14c0 8.05-6.1 9.8-13.92 9.8-7.82 0-11.52-1.85-11.52-7.4V220.06c0-6.11 1.2-12.92 3.48-17.92-12.92 0-32.7 9.29-32.7 26.26V369c0 17.12 9.29 23.67 33.28 23.67 12.81 0 27.05-3.18 27.05-3.18 9.67 0 18.94-3.79 18.94-12.01V273.1c0-2.96-1.13-5.02-3.87-5.73l-9.55-2.92zm85.11 5.93c-15.87-25.36-32.11-35.7-54.3-35.7s-27.37 10.34-27.37 10.34v91.2s11.76 18.09 27.37 18.09c15.6 0 32.11-10.34 47.6-27.37 15.48-17.03 25.22-32.92 25.22-32.92s-6.15-14.33-18.52-23.63zm42.25 70.35c-15.76-20.88-33.33-40.19-33.33-65.96 0-20.71 15.03-28.25 15.03-28.25V239.7s-10.47-3.93-20.71-3.93c-10.24 0-22.47 8.8-29.41 19.77-6.94 10.97-12.05 19.77-12.05 30.25 0 10.48 3.33 20.12 10.24 30.04 6.91 9.92 13.5 18.98 19.77 27.55 6.27 8.57 8.57 16.82 8.57 24.29 0 7.47-10.24 17.71-10.24 17.71v10.11s11.4 2.5 21.87 2.5c10.47 0 22.24-7.73 28.51-15.87 6.27-8.13 13.93-15.57 18.41-22.5 4.48-6.93 7.14-13.93 7.14-19.4-.01-5.47-2.35-10.71-9.95-20.94zM325.6 52.16c0 27.88-13.94 49.93-31.27 49.93s-31.27-22.05-31.27-49.93c0-27.88 13.94-49.93 31.27-49.93S325.6 24.28 325.6 52.16zm-61.47 0c0 27.88-13.94 49.93-31.27 49.93S201.6 80.04 201.6 52.16c0-27.88 13.94-49.93 31.27-49.93s31.27 22.05 31.27 49.93z"/>
+                            </svg>
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">AWS</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 85%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-85 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <!-- GCP Logo SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" style="margin-bottom: 15px;" viewBox="0 0 512 512">
+                                <path fill="#EA4335" d="M256 32L32 256l32 32L256 96l112 112h-64L200 312l-32-32 88-88h129.6L160 426.7 192 464l160-160-32-32-64 64-16.7-21.3 60.7-60.7H464l-96-96-32-32L256 32z"/>
+                                <path fill="#4285F4" d="M352 336l-32 32-24-24-32 32 56 56 64-64-32-32z"/>
+                            </svg>
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Google Cloud</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 60%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-60 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <!-- Azure Logo SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" style="margin-bottom: 15px;" viewBox="0 0 96 96">
+                                <path fill="#0078D4" d="M31.3 15.77c.11-.27.28-.5.51-.67s.5-.26.77-.26a1.28 1.28 0 0 1 .55.11c.3.15 30.11 16.94 30.11 16.94L31.87 15.77a1.38 1.38 0 0 0-.57 0m30.94 29.24L80.89 16.4c1.29-1.94-1.07-4.3-3-3L43.13 32.29l19.11 12.72M48.63 50.8L28.77 37.64c-.74-.5-1.68-.54-2.46-.11L8.09 48.29c-2.15 1.19-1.08 4.43 1.35 4.43h40.5c-.43-1.02-.2-2.94-1.31-1.92M80.49 80.47H29.59c-2.14 0-3.86-1.71-3.86-3.83V44a.18.18 0 0 1 .18-.18c.1 0 .17.08.18.18v32.64c0 1.9 1.55 3.44 3.47 3.44h48.07c1.92 0 3.47-1.54 3.47-3.44V51.17a.18.18 0 0 1 .18-.18c.1 0 .18.08.18.18v25.47c0 2.12-1.72 3.83-3.86 3.83h2.89z"/>
+                            </svg>
+                            <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Azure</h4>
+                            <div class="skill-bar" style="height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px;">
+                                <div style="width: 50%; height: 100%; background: var(--primary); border-radius: 4px; animation: animate-progress-50 1.5s ease-out;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Containers & Orchestration -->
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">
+                        <i class="fas fa-cubes" style="color: var(--primary); margin-right: 10px;"></i>
+                        Containers & Orchestration
+                    </h3>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div class="skill-card" style="background: white; border-radius: 8px; padding: 20px; width: calc(33.333% - 20px); box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <!-- Docker Logo SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" style="margin-bottom: 15px;" viewBox="0 0 640 512">
+                                <path fill="#2496ED" d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio | 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0078d7;
+            --secondary: #00c39a;
+            --dark: #172b4d;
+            --light: #f7faff;
+            --gray: #8996a8;
+            --code-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 120, 215, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        /* Animation for cloud background */
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: rgba(255,255,255,0.8);
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Skill bar animations */
+        @keyframes animate-progress-50 {
+            0% { width: 0; }
+            100% { width: 50%; }
+        }
+        @keyframes animate-progress-60 {
+            0% { width: 0; }
+            100% { width: 60%; }
+        }
+        @keyframes animate-progress-65 {
+            0% { width: 0; }
+            100% { width: 65%; }
+        }
+        @keyframes animate-progress-70 {
+            0% { width: 0; }
+            100% { width: 70%; }
+        }
+        @keyframes animate-progress-75 {
+            0% { width: 0; }
+            100% { width: 75%; }
+        }
+        @keyframes animate-progress-80 {
+            0% { width: 0; }
+            100% { width: 80%; }
+        }
+        @keyframes animate-progress-85 {
+            0% { width: 0; }
+            100% { width: 85%; }
+        }
+        @keyframes animate-progress-90 {
+            0% { width: 0; }
+            100% { width: 90%; }
+        }
+        @keyframes animate-progress-95 {
+            0% { width: 0; }
+            100% { width: 95%; }
+        }
+
+        /* Particles background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header/Navigation -->
+    <header style="position: fixed; width: 100%; top: 0; z-index: 1000; background-color: rgba(255,255,255,0.95); box-shadow: var(--shadow);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+            <a href="#" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--dark);">
+                <span style="color: var(--primary);">DevOps</span>Portfolio
+            </a>
+
+            <nav>
+                <ul style="display: flex; list-style: none;">
+                    <li style="margin-left: 25px;"><a href="#home" style="color: var(--dark); font-weight: 500;">Home</a></li>
+                    <li style="margin-left: 25px;"><a href="#about" style="color: var(--dark); font-weight: 500;">About</a></li>
+                    <li style="margin-left: 25px;"><a href="#skills" style="color: var(--dark); font-weight: 500;">Skills</a></li>
+                    <li style="margin-left: 25px;"><a href="#projects" style="color: var(--dark); font-weight: 500;">Projects</a></li>
+                    <li style="margin-left: 25px;"><a href="#certifications" style="color: var(--dark); font-weight: 500;">AWS Certifications</a></li>
+                    <li style="margin-left: 25px;"><a href="#contact" style="color: var(--dark); font-weight: 500;">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu" style="display: none; cursor: pointer;">
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+                <div style="width: 25px; height: 3px; background-color: var(--dark); margin: 5px 0;"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" style="height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin-top: 80px; position: relative; overflow: hidden;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1; animation: fadeIn 1s ease forwards;">
+                <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 10px;">Hello, I'm a</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2;">DevOps Engineer <br><span style="color: var(--primary);">AWS Specialist</span></h1>
+                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px; max-width: 500px;">
+                    Building and automating CI/CD pipelines, orchestrating containerized applications,
+                    and managing cloud infrastructure with AWS services.
+                </p>
+                <div>
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div style="flex: 1; text-align: right; position: relative; height: 400px;">
+                <!-- AWS Service Icons Cloud -->
+                <div class="cloud-container" style="position: relative; height: 100%; width: 100%;">
+                    <!-- AWS Icons with
